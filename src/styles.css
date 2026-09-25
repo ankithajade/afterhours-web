@@ -1,0 +1,713 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * AFTERHOURS 1.0 design system.
+ * Every colour, gradient, shadow and glow is a token here.
+ * Never hardcode colours in components.
+ */
+
+@theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-panel: var(--panel);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-live: var(--live);
+  --color-live-foreground: var(--live-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-grid: var(--grid);
+  --color-scanline: var(--scanline);
+}
+
+:root {
+  --radius: 0.5rem;
+  color-scheme: light;
+
+  /* Single rhythm token for vertical space between major sections. */
+  --section-gap: clamp(2.1rem, 4vw, 3.5rem);
+
+
+  /* Light — warm off-white, high contrast, same ember/cyan accents */
+  --background: oklch(0.982 0.008 85);
+  --foreground: oklch(0.19 0.022 258);
+  --surface: oklch(0.955 0.011 82);
+  --surface-foreground: oklch(0.19 0.022 258);
+  --panel: oklch(1 0 0 / 68%);
+  --card: oklch(0.998 0.004 85);
+  --card-foreground: oklch(0.19 0.022 258);
+  --popover: oklch(0.998 0.004 85);
+  --popover-foreground: oklch(0.19 0.022 258);
+  --primary: oklch(0.612 0.203 38.5);
+  --primary-foreground: oklch(0.995 0.005 85);
+  --secondary: oklch(0.93 0.014 82);
+  --secondary-foreground: oklch(0.23 0.022 258);
+  --muted: oklch(0.94 0.011 82);
+  --muted-foreground: oklch(0.47 0.021 255);
+  --accent: oklch(0.93 0.02 60);
+  --accent-foreground: oklch(0.23 0.022 258);
+  --live: oklch(0.55 0.135 219);
+  --live-foreground: oklch(0.995 0.005 85);
+  --destructive: oklch(0.545 0.216 27);
+  --destructive-foreground: oklch(0.995 0.005 85);
+  --success: oklch(0.55 0.14 155);
+  --border: oklch(0.885 0.014 80);
+  --input: oklch(0.885 0.014 80);
+  --ring: oklch(0.612 0.203 38.5);
+  --grid: oklch(0.19 0.022 258 / 14%);
+  --scanline: oklch(0.19 0.022 258 / 12%);
+
+  --glow-primary: 0 0 0 1px oklch(0.612 0.203 38.5 / 22%), 0 12px 40px -12px oklch(0.612 0.203 38.5 / 45%);
+  --glow-live: 0 0 0 1px oklch(0.55 0.135 219 / 25%), 0 12px 40px -14px oklch(0.55 0.135 219 / 45%);
+  --shadow-panel: 0 1px 2px oklch(0.19 0.022 258 / 5%), 0 18px 45px -25px oklch(0.19 0.022 258 / 30%);
+  --gradient-ember: linear-gradient(135deg, oklch(0.612 0.203 38.5), oklch(0.70 0.17 60));
+  --gradient-void: linear-gradient(180deg, oklch(0.982 0.008 85), oklch(0.945 0.014 78));
+  --ring-track: oklch(0.19 0.022 258 / 10%);
+}
+
+.dark {
+  color-scheme: dark;
+  /* Dark — void navy, late-night hacker */
+
+  --background: oklch(0.165 0.019 253);
+  --foreground: oklch(0.965 0.006 85);
+  --surface: oklch(0.208 0.021 253);
+  --surface-foreground: oklch(0.965 0.006 85);
+  --panel: oklch(0.965 0.006 85 / 5%);
+  --card: oklch(0.212 0.022 253);
+  --card-foreground: oklch(0.965 0.006 85);
+  --popover: oklch(0.205 0.021 253);
+  --popover-foreground: oklch(0.965 0.006 85);
+  --primary: oklch(0.706 0.187 40);
+  --primary-foreground: oklch(0.16 0.02 253);
+  --secondary: oklch(0.262 0.023 253);
+  --secondary-foreground: oklch(0.965 0.006 85);
+  --muted: oklch(0.255 0.021 253);
+  --muted-foreground: oklch(0.708 0.028 250);
+  --accent: oklch(0.28 0.035 45);
+  --accent-foreground: oklch(0.965 0.006 85);
+  --live: oklch(0.826 0.145 208);
+  --live-foreground: oklch(0.16 0.02 253);
+  --destructive: oklch(0.68 0.19 25);
+  --destructive-foreground: oklch(0.16 0.02 253);
+  --success: oklch(0.75 0.16 158);
+  --border: oklch(0.965 0.006 85 / 12%);
+  --input: oklch(0.965 0.006 85 / 16%);
+  --ring: oklch(0.706 0.187 40);
+  --grid: oklch(0.826 0.145 208 / 12%);
+  --scanline: oklch(0.826 0.145 208 / 18%);
+
+  --glow-primary: 0 0 0 1px oklch(0.706 0.187 40 / 35%), 0 0 44px -8px oklch(0.706 0.187 40 / 55%);
+  --glow-live: 0 0 0 1px oklch(0.826 0.145 208 / 35%), 0 0 44px -8px oklch(0.826 0.145 208 / 55%);
+  --shadow-panel: 0 1px 0 oklch(0.965 0.006 85 / 6%) inset, 0 24px 60px -30px oklch(0 0 0 / 80%);
+  --gradient-ember: linear-gradient(135deg, oklch(0.706 0.187 40), oklch(0.78 0.15 62));
+  --gradient-void: linear-gradient(180deg, oklch(0.165 0.019 253), oklch(0.19 0.021 253));
+  --ring-track: oklch(0.965 0.006 85 / 9%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility glow-primary {
+  box-shadow: var(--glow-primary);
+}
+
+@utility glow-live {
+  box-shadow: var(--glow-live);
+}
+
+@utility panel {
+  background-color: var(--color-panel);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-panel);
+}
+
+@utility text-gradient-ember {
+  background: var(--gradient-ember);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Motion ---------- */
+
+@keyframes ah-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ah-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ah-spring {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translate3d(0, 12px, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03) translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ah-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes ah-caret {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ah-ring-draw {
+  from {
+    stroke-dashoffset: var(--ring-circumference);
+  }
+  to {
+    stroke-dashoffset: var(--ring-offset-target);
+  }
+}
+
+@keyframes ah-flap-in {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ah-flap-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes ah-pulse-node {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ah-scan {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes ah-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ah-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.06);
+  }
+}
+
+@utility animate-rise {
+  animation: ah-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-spring-in {
+  animation: ah-spring 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-wipe {
+  animation: ah-wipe 0.9s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@utility animate-scan {
+  animation: ah-scan 3.6s linear infinite;
+}
+
+@utility animate-breathe {
+  animation: ah-breathe 4s ease-in-out infinite;
+}
+
+@utility animate-orbit {
+  animation: ah-orbit 24s linear infinite;
+}
+
+/* Scroll-drift reveal */
+.ah-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.ah-reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Magnetic glow button */
+.ah-magnetic {
+  position: relative;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
+}
+
+.ah-magnetic:hover {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: var(--glow-primary);
+}
+
+.ah-magnetic:active {
+  transform: translate3d(0, 0, 0);
+}
+
+.ah-flap {
+  animation: ah-flap-in 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ah-flap-out {
+  animation: ah-flap-out 0.32s cubic-bezier(0.7, 0, 0.84, 0) both;
+}
+
+.ah-node-ping {
+  animation: ah-pulse-node 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.2s !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ah-reveal {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .ah-reveal[data-visible="true"] {
+    transform: none;
+  }
+
+  .ah-magnetic:hover {
+    transform: none;
+  }
+
+  .animate-rise,
+  .animate-spring-in,
+  .animate-wipe,
+  .ah-flap,
+  .ah-flap-out {
+    animation: ah-fade 0.3s ease both !important;
+    clip-path: none !important;
+  }
+}
+
+/* ---------- Sitewide atmosphere: the "signal field" ---------- */
+
+/* Fixed backdrop rendered once per page, behind the page content.
+   Content sits at z-10; a negative z-index would hide it behind the body. */
+.ah-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+/* Layer 2 — fine dot grid, 1px dots on a 28px lattice. */
+.ah-field__dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--color-muted-foreground) 6%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+}
+
+/* Layer 3 — static concentric rings, centre off-canvas bottom-right. */
+.ah-field__rings {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ah-ring {
+  fill: none;
+  stroke-width: 1;
+}
+
+.ah-ring--1 {
+  stroke: color-mix(in oklab, var(--color-primary) 8%, transparent);
+}
+
+.ah-ring--2 {
+  stroke: color-mix(in oklab, var(--color-primary) 4%, transparent);
+}
+
+.ah-ring--3 {
+  stroke: color-mix(in oklab, var(--color-primary) 2%, transparent);
+}
+
+/* Layer 4 — two slow-drifting glow blooms. */
+.ah-field__bloom {
+  position: absolute;
+  display: block;
+  height: 34rem;
+  width: 34rem;
+  border-radius: 9999px;
+  filter: blur(130px);
+  will-change: transform;
+}
+
+.ah-field__bloom--ember {
+  top: 4%;
+  left: -6%;
+  background: color-mix(in oklab, var(--color-primary) 100%, transparent);
+  opacity: 0.12;
+  animation: ah-drift-a 28s ease-in-out infinite alternate;
+}
+
+.ah-field__bloom--signal {
+  bottom: 6%;
+  right: -4%;
+  height: 38rem;
+  width: 38rem;
+  background: color-mix(in oklab, var(--color-live) 100%, transparent);
+  opacity: 0.08;
+  animation: ah-drift-b 34s ease-in-out infinite alternate;
+}
+
+@keyframes ah-drift-a {
+  from {
+    transform: translate3d(-40px, -20px, 0);
+  }
+  to {
+    transform: translate3d(40px, 30px, 0);
+  }
+}
+
+@keyframes ah-drift-b {
+  from {
+    transform: translate3d(30px, 40px, 0);
+  }
+  to {
+    transform: translate3d(-40px, -30px, 0);
+  }
+}
+
+/* Layer 5 — fractal-noise grain. */
+.ah-field__grain {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+}
+
+/* Light mode: grain reads heavy on a bright surface, and the rings need a
+   touch more presence to stay perceptible without hurting contrast. */
+:root:not(.dark) .ah-field__grain {
+  opacity: 0.02;
+  mix-blend-mode: multiply;
+}
+
+/* Depth effects are the most expensive thing on small screens — soften them. */
+@media (max-width: 640px) {
+  .ah-field__bloom {
+    filter: blur(80px);
+    opacity: 0.1;
+  }
+
+  .ah-field__grain {
+    opacity: 0.014;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ah-field__bloom {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* Body copy: justified from tablet up, ragged-right on narrow screens where
+   justification produces ugly word gaps. */
+.ah-prose {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .ah-prose {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
+
+/* Headline — never wraps, scales fluidly instead. */
+.ah-headline-line {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 0.1em;
+  white-space: nowrap;
+}
+
+/* Sized against the hero text column (container query) so the headline never
+   grows into the countdown ring's space at any width. */
+.ah-headline-word {
+  font-size: clamp(2.8rem, 14.6cqi, 15rem);
+  white-space: nowrap;
+}
+
+/* Version tag sits low, like a subscript, against the headline baseline. */
+.ah-headline-tag {
+  font-size: clamp(1.05rem, 4cqi, 3rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-0.06em);
+}
+
+
+
+/* Custom cursor: hide the native one on fine-pointer devices. */
+.ah-has-cursor,
+.ah-has-cursor * {
+  cursor: none !important;
+}
+
+/* Card hover lift */
+.ah-lift {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.ah-lift:hover {
+  transform: translate3d(0, -5px, 0);
+  box-shadow: var(--glow-primary);
+  border-color: color-mix(in oklab, var(--color-primary) 62%, transparent);
+}
+
+
+/* Smooth accordion */
+.ah-collapse {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.34s ease-in-out;
+}
+
+.ah-collapse[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.ah-collapse > div {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.28s ease-in-out;
+}
+
+.ah-collapse[data-open="true"] > div {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ah-lift:hover {
+    transform: none;
+  }
+
+
+  .ah-lift:hover {
+    transform: none;
+  }
+
+  .ah-collapse,
+  .ah-collapse > div {
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Clock face standing in for the "O" in HOURS — matches cap-height + baseline. */
+.ah-clock-o {
+  display: inline-block;
+  width: 0.82em;
+  height: 0.82em;
+  vertical-align: baseline;
+  margin: 0 0.01em;
+  transform: translateY(0.055em);
+  color: var(--color-primary);
+}
+
+
+/* Branding ticker — slow, continuous horizontal loop. */
+.ah-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.ah-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: ah-marquee-scroll 42s linear infinite;
+}
+
+.ah-marquee:hover .ah-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes ah-marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ah-marquee__track {
+    animation: none !important;
+  }
+}
