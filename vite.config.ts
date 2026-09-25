@@ -8,6 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   base: "/afterhours-1.0/",
+  
   nitro: {
     preset: "node-server",
   },

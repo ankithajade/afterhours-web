@@ -7,6 +7,7 @@ export const getRouter = () => {
 
   const router = createRouter({
     routeTree,
+    basepath: "/afterhours-1.0/",
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
