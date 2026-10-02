@@ -4,10 +4,10 @@ import { motion } from "motion/react";
 import { CountdownRing } from "@/components/countdown-ring";
 import { ClockGlyph } from "@/components/clock-glyph";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
-import collegeLogoBlack from "@/assets/college-logo-black.svg.asset.json";
-import collegeLogoWhite from "@/assets/college-logo-white.svg.asset.json";
-import awsSbgSquareWhite from "@/assets/aws-sbg-square-white.svg.asset.json";
-import awsSbgSquareGrey from "@/assets/aws-sbg-square-grey.svg.asset.json";
+import collegeLogoBlack from "@/assets/college-logo-black.svg";
+import collegeLogoWhite from "@/assets/college-logo-white.svg";
+import awsSbgSquareWhite from "@/assets/aws-sbg-square-white.svg";
+import awsSbgSquareGrey from "@/assets/aws-sbg-square-grey.svg";
 import { useContent } from "@/lib/content";
 import { REGISTER_URL } from "@/lib/event-data";
 import { useIntroPlay } from "@/lib/intro";
@@ -97,13 +97,13 @@ export function Hero() {
           className="pointer-events-none absolute top-0 right-0 z-10 hidden lg:block"
         >
           <img
-            src={collegeLogoBlack.url}
+            src={collegeLogoBlack}
             alt="Don Bosco Institute of Technology"
             loading="eager"
             className="h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:hidden"
           />
           <img
-            src={collegeLogoWhite.url}
+            src={collegeLogoWhite}
             alt="Don Bosco Institute of Technology"
             loading="eager"
             className="hidden h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:block"
@@ -117,13 +117,13 @@ export function Hero() {
             className="flex items-center gap-3"
           >
             <img
-              src={awsSbgSquareWhite.url}
+              src={awsSbgSquareWhite}
               alt="AWS Student Builder Group"
               loading="eager"
               className="hidden h-8 w-8 shrink-0 object-contain dark:block"
             />
             <img
-              src={awsSbgSquareGrey.url}
+              src={awsSbgSquareGrey}
               alt="AWS Student Builder Group"
               loading="eager"
               className="h-8 w-8 shrink-0 object-contain dark:hidden"

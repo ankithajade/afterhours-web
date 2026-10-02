@@ -6,16 +6,16 @@ import { ClockGlyph } from "@/components/clock-glyph";
 import { REGISTER_URL } from "@/lib/event-data";
 import { StaggeredMenu } from "@/components/staggered-menu/StaggeredMenu";
 import { useContent } from "@/lib/content";
-import awsSbgLogoDark from "@/assets/aws-sbg-logo-white.svg.asset.json";
-import awsSbgLogoLight from "@/assets/aws-sbg-logo-black.svg.asset.json";
+import awsSbgLogoDark from "@/assets/aws-sbg-logo-white.svg";
+import awsSbgLogoLight from "@/assets/aws-sbg-logo-black.svg";
 
 const NAV = [
-  { label: "About", link: "/#about" },
-  { label: "Timeline", link: "/#timeline" },
-  { label: "Details", link: "/#details" },
-  { label: "Prizes", link: "/#prizes" },
-  { label: "FAQ", link: "/#faq" },
-  { label: "Register", link: REGISTER_URL },
+  { label: "About", link: "./#about" },
+  { label: "Timeline", link: "./#timeline" },
+  { label: "Details", link: "./#details" },
+  { label: "Prizes", link: "./#prizes" },
+  { label: "FAQ", link: "./#faq" },
+  { label: "Register", link: "register" },
 ];
 
 const SOCIAL_ICONS: Record<string, typeof Instagram> = {
@@ -54,13 +54,13 @@ export function SiteHeader() {
     <div className="flex min-w-0 items-center gap-2 sm:gap-3.5">
       {/* AWS SBG logo — switches automatically between dark/light theme variants. */}
       <img
-        src={awsSbgLogoLight.url}
+        src={awsSbgLogoLight}
         alt="AWS Student Builder Group"
         loading="eager"
         className="h-7 w-auto max-w-[10rem] object-contain dark:hidden"
       />
       <img
-        src={awsSbgLogoDark.url}
+        src={awsSbgLogoDark}
         alt="AWS Student Builder Group"
         loading="eager"
         className="hidden h-7 w-auto max-w-[10rem] object-contain dark:block"
@@ -79,7 +79,7 @@ export function SiteHeader() {
       />
       <StaggeredMenu
         items={NAV}
-        panelCta={{ label: "Register your team", link: REGISTER_URL }}
+        panelCta={{ label: "Register your team", link: "register" }}
         socialItems={socials
           .filter((s) => s.href)
           .map((s) => ({
@@ -164,14 +164,14 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-base">
             <li>
               <Link
-                to={REGISTER_URL}
+                to="/register"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Register your team
               </Link>
             </li>
             <li>
-              <a href="/#sponsors" className="text-muted-foreground transition-colors hover:text-foreground">
+              <a href="./#sponsors" className="text-muted-foreground transition-colors hover:text-foreground">
                 Become a sponsor
               </a>
             </li>

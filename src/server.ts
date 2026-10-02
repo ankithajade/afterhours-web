@@ -8,6 +8,7 @@ type ServerEntry = {
 };
 
 let serverEntryPromise: Promise<ServerEntry> | undefined;
+const DEPLOYMENT_BASE_PATH = "/afterhours-1.0";
 
 async function getServerEntry(): Promise<ServerEntry> {
   if (!serverEntryPromise) {
@@ -48,7 +49,27 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      const url = new URL(request.url);
+      const isPrefixedRequest =
+        url.pathname === DEPLOYMENT_BASE_PATH ||
+        url.pathname.startsWith(`${DEPLOYMENT_BASE_PATH}/`);
+      const isStaticRequest =
+        url.pathname.startsWith("/assets/") ||
+        url.pathname.startsWith("/__l5e/") ||
+        url.pathname === "/favicon.svg" ||
+        url.pathname === "/og-afterhours.jpg" ||
+        url.pathname === "/robots.txt";
+      const serverRequest =
+        isPrefixedRequest || isStaticRequest
+          ? request
+          : new Request(
+              new URL(
+                `${DEPLOYMENT_BASE_PATH}${url.pathname}${url.search}`,
+                url,
+              ),
+              request,
+            );
+      const response = await handler.fetch(serverRequest, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
