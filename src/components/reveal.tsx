@@ -1,19 +1,6 @@
 import { useEffect, useState, type ElementType, type ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
-/** True on narrow viewports where filter:blur animations cause jank. */
-function useIsMobile(breakpoint = 640) {
-  const [mobile, setMobile] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
-    setMobile(mq.matches);
-    const onChange = () => setMobile(mq.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, [breakpoint]);
-  return mobile;
-}
-
 /**
  * Motion components must be created once per element type. Creating them
  * inside render produces a new component type every render, which makes React
@@ -44,30 +31,14 @@ export function Reveal({
   id?: string;
 }) {
   const reduced = useReducedMotion();
-  const mobile = useIsMobile();
   const MotionTag = motionFor(as) as ElementType;
-
-  // Skip filter:blur on mobile — it forces per-element compositing layers.
-  const useBlur = !reduced && !mobile;
 
   return (
     <MotionTag
       id={id}
-      className={className}
-      initial={
-        reduced
-          ? { opacity: 0 }
-          : useBlur
-            ? { opacity: 0, y: 34, filter: "blur(4px)" }
-            : { opacity: 0, y: 34 }
-      }
-      whileInView={
-        reduced
-          ? { opacity: 1 }
-          : useBlur
-            ? { opacity: 1, y: 0, filter: "blur(0px)" }
-            : { opacity: 1, y: 0 }
-      }
+      className={className ? `${className} ah-reveal` : "ah-reveal"}
+      initial={reduced ? { opacity: 0 } : { opacity: 0, y: 34, filter: "blur(4px)" }}
+      whileInView={reduced ? { opacity: 1 } : { opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: false, margin: "0px 0px -12% 0px" }}
       transition={{
         duration: reduced ? 0.25 : 0.75,
@@ -127,27 +98,16 @@ export function RevealItem({
   className?: string;
 }) {
   const reduced = useReducedMotion();
-  const mobile = useIsMobile();
   const MotionTag = motionFor(as) as ElementType;
-
-  const useBlur = !reduced && !mobile;
 
   return (
     <MotionTag
-      className={className}
+      className={className ? `${className} ah-reveal` : "ah-reveal"}
       variants={{
-        hidden: reduced
-          ? { opacity: 0 }
-          : useBlur
-            ? { opacity: 0, y: 28, filter: "blur(4px)" }
-            : { opacity: 0, y: 28 },
+        hidden: reduced ? { opacity: 0 } : { opacity: 0, y: 28, filter: "blur(4px)" },
         show: {
           opacity: 1,
-          ...(reduced
-            ? {}
-            : useBlur
-              ? { y: 0, filter: "blur(0px)" }
-              : { y: 0 }),
+          ...(reduced ? {} : { y: 0, filter: "blur(0px)" }),
           transition: { duration: reduced ? 0.25 : 0.65, ease: [0.16, 1, 0.3, 1] },
         },
       }}

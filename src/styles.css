@@ -728,3 +728,15 @@
     animation: none !important;
   }
 }
+
+/* 
+ * Mobile Performance Overrides
+ * Strip expensive filters on narrow viewports to ensure 60fps scrolling.
+ */
+@media (max-width: 640px) {
+  /* Force ignore Framer Motion's inline filter: blur() on mobile reveals 
+     to save GPU without causing React hydration mismatches */
+  .ah-reveal {
+    filter: none !important;
+  }
+}
