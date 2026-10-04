@@ -58,6 +58,7 @@ export default {
         url.pathname.startsWith("/__l5e/") ||
         url.pathname === "/favicon-dark.svg" ||
         url.pathname === "/favicon-light.svg" ||
+        url.pathname === "/og-afterhours.png" ||
         url.pathname === "/og-afterhours.jpg" ||
         url.pathname === "/robots.txt";
       const serverRequest =

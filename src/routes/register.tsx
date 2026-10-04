@@ -10,7 +10,7 @@ const description =
   "Everything to know before registering for AFTERHOURS 1.0 — the ₹1,000 team fee, pre-qualification round structure, refund policy and WhatsApp channel updates.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/register";
-const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.jpg";
+const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
 
 export const Route = createFileRoute("/register")({
   head: () => ({

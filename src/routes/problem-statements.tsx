@@ -9,7 +9,7 @@ const description =
   "Pre-qualification problem statements for AFTERHOURS 1.0 — 24-Hour Hackathon at DBIT. Dropping on 20 October 2026.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/problem-statements";
-const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.jpg";
+const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
 
 export const Route = createFileRoute("/problem-statements")({
   head: () => ({

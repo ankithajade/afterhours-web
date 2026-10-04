@@ -9,7 +9,7 @@ const description =
   "Grand Finale themes for AFTERHOURS 1.0 — 24-Hour Hackathon at Don Bosco Institute of Technology. Posted here once qualified teams are announced.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/themes";
-const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.jpg";
+const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
 
 export const Route = createFileRoute("/themes")({
   head: () => ({

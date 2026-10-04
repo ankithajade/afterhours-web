@@ -9,7 +9,7 @@ const description =
   "Official rules and regulations for AFTERHOURS 1.0 — Pre-Qualification round details, Grand Finale format, evaluation criteria, and key rules for the DBIT hackathon.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/rules";
-const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.jpg";
+const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
 
 export const Route = createFileRoute("/rules")({
   head: () => ({
