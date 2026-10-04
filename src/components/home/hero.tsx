@@ -89,24 +89,24 @@ export function Hero() {
       />
 
       <div className="relative mx-auto mt-2 grid w-full max-w-[84rem] items-center gap-12 px-4 sm:px-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-10">
-        {/* College logo — top-right corner of the hero area, theme-aware. */}
+        {/* College logo — inline at mobile, absolute top-right from lg up. */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 * s, delay: 0.1 * s, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-none absolute top-0 right-0 z-10 hidden lg:block"
+          className="pointer-events-none lg:absolute lg:top-0 lg:right-0 lg:z-10 mb-4 lg:mb-0"
         >
           <img
             src={collegeLogoBlack}
             alt="Don Bosco Institute of Technology"
             loading="eager"
-            className="h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:hidden"
+            className="h-10 w-auto max-w-[12rem] object-contain dark:hidden lg:h-[4.83rem] lg:max-w-[17.55rem]"
           />
           <img
             src={collegeLogoWhite}
             alt="Don Bosco Institute of Technology"
             loading="eager"
-            className="hidden h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:block"
+            className="hidden h-10 w-auto max-w-[12rem] object-contain dark:block lg:h-[4.83rem] lg:max-w-[17.55rem]"
           />
         </motion.div>
         <div className="@container">

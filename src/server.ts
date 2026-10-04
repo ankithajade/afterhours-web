@@ -56,19 +56,20 @@ export default {
       const isStaticRequest =
         url.pathname.startsWith("/assets/") ||
         url.pathname.startsWith("/__l5e/") ||
-        url.pathname === "/favicon.svg" ||
+        url.pathname === "/favicon-dark.svg" ||
+        url.pathname === "/favicon-light.svg" ||
         url.pathname === "/og-afterhours.jpg" ||
         url.pathname === "/robots.txt";
       const serverRequest =
         isPrefixedRequest || isStaticRequest
           ? request
           : new Request(
-              new URL(
-                `${DEPLOYMENT_BASE_PATH}${url.pathname}${url.search}`,
-                url,
-              ),
-              request,
-            );
+            new URL(
+              `${DEPLOYMENT_BASE_PATH}${url.pathname}${url.search}`,
+              url,
+            ),
+            request,
+          );
       const response = await handler.fetch(serverRequest, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {

@@ -70,7 +70,15 @@ export const TIMELINE: TimelineItem[] = [
     dateISO: "2026-10-18",
     title: "Pre-Qualification Round Begins (Online)",
     description:
-      "The online pre-qualification round opens. Registered teams attempt it remotely — no travel, no venue.",
+      "The online pre-qualification round opens 18 October. Registered teams attempt it remotely — no travel, no venue.",
+    kind: "milestone",
+  },
+  {
+    date: "22 OCTOBER",
+    dateISO: "2026-10-22",
+    title: "Pre-Qualification Round Closes",
+    description:
+      "The online pre-qualification round closes 22 October. Teams will not be able to submit their entries after this date.",
     kind: "milestone",
   },
   {

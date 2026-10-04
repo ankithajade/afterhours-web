@@ -51,22 +51,8 @@ export function About() {
       }
       lede={about.lede}
     >
-      {/* One shared trigger on the grid — children animate in DOM order. */}
-      <RevealGroup className="grid gap-4 sm:grid-cols-3" stagger={0.11}>
-        {about.cards.map((card, i) => (
-          <RevealItem key={card.title} className="h-full">
-            <article className="panel ah-lift h-full rounded-xl p-6">
-              <span className="font-mono text-xs uppercase tracking-[0.24em] text-primary">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 text-xl font-bold">{card.title}</h3>
-              <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
-                {card.body}
-              </p>
-            </article>
-          </RevealItem>
-        ))}
-      </RevealGroup>
+      {/* Cards removed — only the section heading and intro lede remain. */}
+      <></>
     </SectionShell>
   );
 }
@@ -212,11 +198,10 @@ export function Timeline() {
             <RevealItem as="li" key={item.title} className="group relative">
               <span
                 aria-hidden="true"
-                className={`absolute -left-[2.3125rem] top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full ring-4 ring-background transition-all duration-300 group-hover:scale-150 ${
-                  item.kind === "event"
+                className={`absolute -left-[2.3125rem] top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full ring-4 ring-background transition-all duration-300 group-hover:scale-150 ${item.kind === "event"
                     ? "bg-live group-hover:shadow-[var(--glow-live)]"
                     : "bg-primary group-hover:shadow-[var(--glow-primary)]"
-                }`}
+                  }`}
               >
                 <span
                   className={`ah-node-ping absolute inset-0 rounded-full ${item.kind === "event" ? "bg-live" : "bg-primary"}`}

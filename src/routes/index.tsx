@@ -86,8 +86,8 @@ function Home() {
                 Register your team
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                {EVENT.teamSize}. One flat {EVENT.feeLabel}, paid on Unstop. Registrations close 25
-                October 2026.
+                2–4 members, team lead included. ₹1,000 per team on Unstop
+                — registrations close 16 October 2026.
               </p>
               <Link
                 to={REGISTER_URL}
@@ -96,6 +96,15 @@ function Home() {
                 Register your team
                 <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
               </Link>
+              <div className="mt-6">
+                <Link
+                  to="/rules"
+                  className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Read the full rules &amp; regulations
+                  <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+                </Link>
+              </div>
             </div>
           </Reveal>
         </section>
@@ -108,3 +117,5 @@ function Home() {
     </>
   );
 }
+
+

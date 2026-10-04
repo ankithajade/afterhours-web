@@ -207,6 +207,7 @@
     opacity: 0;
     transform: translate3d(0, 26px, 0);
   }
+
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -217,6 +218,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -227,10 +229,12 @@
     opacity: 0;
     transform: scale(0.9) translate3d(0, 12px, 0);
   }
+
   60% {
     opacity: 1;
     transform: scale(1.03) translate3d(0, 0, 0);
   }
+
   100% {
     opacity: 1;
     transform: scale(1) translate3d(0, 0, 0);
@@ -241,16 +245,19 @@
   from {
     clip-path: inset(0 100% 0 0);
   }
+
   to {
     clip-path: inset(0 0 0 0);
   }
 }
 
 @keyframes ah-caret {
+
   0%,
   49% {
     opacity: 1;
   }
+
   50%,
   100% {
     opacity: 0;
@@ -261,6 +268,7 @@
   from {
     stroke-dashoffset: var(--ring-circumference);
   }
+
   to {
     stroke-dashoffset: var(--ring-offset-target);
   }
@@ -270,6 +278,7 @@
   from {
     transform: translate3d(0, -100%, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
@@ -279,17 +288,20 @@
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(0, 100%, 0);
   }
 }
 
 @keyframes ah-pulse-node {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.75;
   }
+
   50% {
     transform: scale(1.5);
     opacity: 0;
@@ -300,6 +312,7 @@
   from {
     transform: translate3d(-100%, 0, 0);
   }
+
   to {
     transform: translate3d(100%, 0, 0);
   }
@@ -309,17 +322,20 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 @keyframes ah-breathe {
+
   0%,
   100% {
     opacity: 0.35;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.7;
     transform: scale(1.06);
@@ -449,11 +465,9 @@
 .ah-field__dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    color-mix(in oklab, var(--color-muted-foreground) 6%, transparent) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(circle at 1px 1px,
+      color-mix(in oklab, var(--color-muted-foreground) 6%, transparent) 1px,
+      transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -516,6 +530,7 @@
   from {
     transform: translate3d(-40px, -20px, 0);
   }
+
   to {
     transform: translate3d(40px, 30px, 0);
   }
@@ -525,6 +540,7 @@
   from {
     transform: translate3d(30px, 40px, 0);
   }
+
   to {
     transform: translate3d(-40px, -30px, 0);
   }
@@ -642,13 +658,13 @@
   grid-template-rows: 1fr;
 }
 
-.ah-collapse > div {
+.ah-collapse>div {
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.28s ease-in-out;
 }
 
-.ah-collapse[data-open="true"] > div {
+.ah-collapse[data-open="true"]>div {
   opacity: 1;
 }
 
@@ -663,7 +679,7 @@
   }
 
   .ah-collapse,
-  .ah-collapse > div {
+  .ah-collapse>div {
     transition-duration: 0.001ms !important;
   }
 }
@@ -701,6 +717,7 @@
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(-50%, 0, 0);
   }

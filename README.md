@@ -1,29 +1,37 @@
-# Welcome to your Lovable project
+# AFTERHOURS 1.0
 
-This project was built with [Lovable](https://lovable.dev).
+Marketing and registration site for **AFTERHOURS 1.0** — a 24-hour inter-college hackathon on 30–31 October 2026 at DBIT, organised by the AWS Student Builder Group.
 
-## Build with Lovable
+Live at **[awsevents.dbit.edu.in](https://awsevents.dbit.edu.in/afterhours-1.0/)**
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+## Stack
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- [TanStack Start](https://tanstack.com/start) (React SSR framework)
+- [Vite](https://vite.dev/) (bundler)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [Motion](https://motion.dev/) (Framer Motion) + [GSAP](https://gsap.com/) for animations
+- [Supabase](https://supabase.com/) (CMS / content storage)
+- TypeScript throughout
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
 
-## Built with
+## Build
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+```sh
+npm run build
+```
+
+## Deployment
+
+Pushes to `main` trigger an automatic deploy to the production server via GitHub Actions (`.github/workflows/main.yml`). The workflow:
+
+1. Syncs source to the AWS EC2 instance via rsync
+2. Runs `npm ci && npm run build` on the server
+3. Restarts the `afterhours` systemd service
+
+No manual deploy steps are needed — merge to `main` and it ships.

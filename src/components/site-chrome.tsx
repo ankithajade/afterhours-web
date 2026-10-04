@@ -15,6 +15,7 @@ const NAV = [
   { label: "Details", link: "./#details" },
   { label: "Prizes", link: "./#prizes" },
   { label: "FAQ", link: "./#faq" },
+  { label: "Rules", link: "rules" },
   { label: "Register", link: "register" },
 ];
 
@@ -75,7 +76,7 @@ export function SiteHeader() {
       {/* One fixed header unit: nav row + compact college caption scroll together. */}
       <div
         aria-hidden="true"
-        className="pointer-events-none fixed inset-x-0 top-0 z-[55] h-[3.4rem] border-b border-border/60 bg-background/80 backdrop-blur-md"
+        className="pointer-events-none fixed inset-x-0 top-0 z-[55] h-[3.4rem] border-b border-border/60 bg-background/95 sm:bg-background/80 sm:backdrop-blur-md"
       />
       <StaggeredMenu
         items={NAV}
@@ -168,6 +169,14 @@ export function SiteFooter() {
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
                 Register your team
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/rules"
+                className="text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Rules &amp; Regulations
               </Link>
             </li>
             <li>

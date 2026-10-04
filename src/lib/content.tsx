@@ -132,7 +132,7 @@ export function buildSiteContent(rows: SiteContentRow[]): SiteContent {
       lede: str(m, "about.lede", ABOUT_LEDE),
       cards: list<AboutCard>(m, "about.cards", ABOUT_CARDS),
     },
-    timeline: list<TimelineItem>(m, "timeline.items", TIMELINE),
+    timeline: TIMELINE,
     details: list<DetailItem>(m, "details.items", DETAILS),
     faq: list<FaqItem>(m, "faq.items", FAQ),
     socials: list<SocialItem>(m, "socials.items", SOCIALS),
