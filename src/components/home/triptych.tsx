@@ -15,13 +15,13 @@ export function Triptych() {
       className="relative mx-auto w-full max-w-[84rem] px-4 py-[calc(var(--section-gap)/2)] sm:px-8"
     >
       <RevealGroup
-        className="flex flex-wrap gap-x-5 gap-y-2 sm:gap-8 md:grid md:grid-cols-3 md:gap-8"
+        className="flex flex-nowrap items-center justify-center gap-2 xs:gap-3 sm:gap-6 md:grid md:grid-cols-3 md:gap-8"
         stagger={0.16}
       >
         {BLOCKS.map((block) => (
-          <RevealItem key={block.accent}>
+          <RevealItem key={block.accent} className="shrink-0 text-center md:text-left">
             <div className="md:border-border md:border-t md:pt-6">
-              <h3 className="font-display text-[clamp(2rem,6vw,3.4rem)] font-bold uppercase leading-[0.95] tracking-[-0.01em]">
+              <h3 className="font-display text-xs xs:text-sm sm:text-xl md:text-[clamp(2rem,6vw,3.4rem)] font-bold uppercase leading-[0.95] tracking-[-0.01em] whitespace-nowrap">
                 <TextEffect as="span" per="char" speed={0.03} trigger="inView">
                   {"One "}
                 </TextEffect>

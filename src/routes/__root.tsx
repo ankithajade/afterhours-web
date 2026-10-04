@@ -88,12 +88,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AFTERHOURS 1.0 — 24-Hour Hackathon" },
+      { title: "AFTERHOURS 1.0 — 24-Hour Hackathon | DBIT AWS Student Club" },
       {
         name: "description",
         content:
-          "AFTERHOURS 1.0 — a 24-hour inter-college hackathon on 30–31 October 2026 at DBIT. Register your team on Unstop.",
+          "AFTERHOURS 1.0 — DBIT's flagship 24-hour inter-college hackathon on 30–31 October 2026 at Don Bosco Institute of Technology, Bengaluru. ₹50,000+ prize pool. Register your team on Unstop.",
       },
+      {
+        name: "keywords",
+        content:
+          "AFTERHOURS 1.0, DBIT Hackathon, Don Bosco Institute of Technology, AWS Student Club DBIT, 24-hour hackathon, Bengaluru hackathon, college hackathon, engineering hackathon 2026, Unstop hackathon",
+      },
+      { name: "author", content: "DBIT AWS Student Club" },
+      { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#0b1220" },
       { property: "og:site_name", content: "AFTERHOURS 1.0" },
       { property: "og:type", content: "website" },

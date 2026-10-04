@@ -5,20 +5,28 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Reveal } from "@/components/reveal";
 import { ClockGlyph } from "@/components/clock-glyph";
 
-const description = "Themes for the AFTERHOURS 1.0 Grand Finale will be posted here once qualified teams are announced.";
+const description =
+  "Grand Finale themes for AFTERHOURS 1.0 — 24-Hour Hackathon at Don Bosco Institute of Technology. Posted here once qualified teams are announced.";
+
+const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/themes";
+const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.jpg";
 
 export const Route = createFileRoute("/themes")({
   head: () => ({
     meta: [
-      { title: "Themes — AFTERHOURS 1.0" },
+      { title: "Grand Finale Themes — AFTERHOURS 1.0 | DBIT Hackathon" },
       { name: "description", content: description },
-      { property: "og:title", content: "Themes — AFTERHOURS 1.0" },
+      { property: "og:title", content: "Grand Finale Themes — AFTERHOURS 1.0" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: PAGE_URL },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Themes — AFTERHOURS 1.0" },
+      { name: "twitter:title", content: "Grand Finale Themes — AFTERHOURS 1.0" },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: PAGE_URL }],
   }),
   component: ThemesPage,
 });

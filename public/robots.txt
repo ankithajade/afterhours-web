@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://awsevents.dbit.edu.in/afterhours-1.0/sitemap.xml

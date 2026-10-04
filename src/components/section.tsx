@@ -59,7 +59,7 @@ export function SectionShell({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "0px 0px -12% 0px" }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className={`ah-prose mt-4 text-lg leading-relaxed text-muted-foreground ${align === "center" ? "md:text-center" : ""}`}
+            className={`ah-prose mt-4 text-lg leading-relaxed text-muted-foreground ${align === "center" ? "text-center" : ""}`}
           >
             {lede}
           </motion.p>
