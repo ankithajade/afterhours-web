@@ -2,7 +2,7 @@ import { RevealGroup, RevealItem } from "@/components/reveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 const BLOCKS = [
-  { accent: "NIGHT", caption: "Sunset to sunset, twenty-four hours straight." },
+  { accent: "NIGHT", caption: "One night, 24 hours straight." },
   { accent: "ROOM", caption: "Every team, same floor, same clock." },
   { accent: "BUILD", caption: "Ship something that actually runs." },
 ];

@@ -62,7 +62,7 @@ function ThemesPage() {
           <Reveal delay={200}>
             <div className="mt-10">
               <a
-                href="/#timeline"
+                href={`${import.meta.env.BASE_URL}#timeline`}
                 className="ah-magnetic inline-flex items-center justify-center rounded-md bg-secondary px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-secondary-foreground transition-colors hover:bg-secondary/80"
               >
                 View the Timeline
