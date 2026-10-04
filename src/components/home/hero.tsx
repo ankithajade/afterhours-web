@@ -7,7 +7,7 @@ import { TextEffect } from "@/components/motion-primitives/text-effect";
 import collegeLogoBlack from "@/assets/college-logo-black.svg";
 import collegeLogoWhite from "@/assets/college-logo-white.svg";
 import awsMobileBlack from "@/assets/aws-mobile-black.svg";
-import awsMobileWhite from "@/assets/aws-mobile-white.svg";
+import awsMobileWhite from "@/assets/aws-mobile-white(2).svg";
 import awsSbgSquareWhite from "@/assets/aws-sbg-square-white.svg";
 import awsSbgSquareGrey from "@/assets/aws-sbg-square-grey.svg";
 import { useContent } from "@/lib/content";
