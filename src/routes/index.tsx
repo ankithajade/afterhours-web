@@ -17,7 +17,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EVENT, REGISTER_URL } from "@/lib/event-data";
 
 const description =
-  "AFTERHOURS 1.0 is DBIT's flagship 24-hour inter-college hackathon hosted by AWS Club DBIT on 30–31 October 2026. Register your team of 2–4 on Unstop. ₹50,000+ prize pool.";
+  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college hackathon on 30–31 October 2026, hosted by AWS Student Builder Group, DBIT. Register your team of 2–4 on Unstop.";
 
 const SITE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/";
 
