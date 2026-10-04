@@ -115,7 +115,7 @@ export function buildSiteContent(rows: SiteContentRow[]): SiteContent {
       subhead: str(m, "hero.subhead", EVENT.subhead),
       subheadAccentWord: str(m, "hero.subhead_accent_word", EVENT.subheadAccentWord),
       tagline: str(m, "hero.tagline", EVENT.tagline),
-      blurb: str(m, "hero.blurb", EVENT.blurb),
+      blurb: EVENT.blurb, // Temporarily bypassing CMS to force local update
       organizerLine: str(m, "hero.organizer_line", EVENT.organizerLine),
     },
     event: {

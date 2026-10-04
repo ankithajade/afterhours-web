@@ -392,17 +392,16 @@ export function Sponsors() {
     <SectionShell
       id="sponsors"
       eyebrow="Partners"
-      title="Sponsor AFTERHOURS 1.0"
-      lede="Sponsor slots for AFTERHOURS 1.0 are open — brand presence on campus, in front of teams from across colleges, for a full 24 hours."
+      title="Sponsors"
+      lede={sponsors.body}
       align="center"
     >
       <Reveal>
-        <div className="panel mx-auto max-w-xl rounded-2xl p-6 text-center sm:p-8">
-          <p className="text-base leading-relaxed text-muted-foreground">{sponsors.body}</p>
+        <div className="mx-auto flex justify-center pt-4">
           {sponsors.contactEmail ? (
             <a
               href={`mailto:${sponsors.contactEmail}`}
-              className="ah-magnetic mt-6 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground"
+              className="ah-magnetic inline-flex items-center justify-center rounded-md bg-primary px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground"
             >
               {sponsors.contactEmail}
             </a>
