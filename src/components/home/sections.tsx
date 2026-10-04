@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { ChevronDown } from "lucide-react";
 import { animate, motion, useInView, useReducedMotion } from "motion/react";
+import { Link } from "@tanstack/react-router";
 import { SectionShell, TbcBadge } from "@/components/section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { useContent } from "@/lib/content";
@@ -369,6 +370,29 @@ export function Sponsors() {
               {sponsors.contactEmail}
             </a>
           ) : null}
+        </div>
+      </Reveal>
+    </SectionShell>
+  );
+}
+
+export function RulesSummary() {
+  return (
+    <SectionShell
+      id="rules-summary"
+      eyebrow="Before you build"
+      title="Rules &amp; Regulations"
+      lede="Two rounds, two different asks — pre-qualification online, the finale offline. Full requirements, evaluation criteria, and the rules that apply to both."
+      align="center"
+    >
+      <Reveal>
+        <div className="flex justify-center">
+          <Link
+            to="/rules"
+            className="ah-magnetic inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-7 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-secondary-foreground hover:bg-secondary/80"
+          >
+            View Rules &amp; Regulations
+          </Link>
         </div>
       </Reveal>
     </SectionShell>

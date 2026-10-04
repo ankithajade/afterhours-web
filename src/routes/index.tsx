@@ -8,6 +8,7 @@ import {
   EventDetails,
   Faq,
   PrizePool,
+  RulesSummary,
   Sponsors,
   Timeline,
 } from "@/components/home/sections";
@@ -76,6 +77,8 @@ function Home() {
         <EventDetails />
         <Triptych />
 
+        <RulesSummary />
+        
         <section id="register" className="mx-auto w-full max-w-[84rem] scroll-mt-24 px-4 py-[calc(var(--section-gap)/2)] sm:px-8">
           <Reveal>
             <div className="panel glow-primary mx-auto max-w-3xl rounded-2xl p-10 text-center">
@@ -96,15 +99,6 @@ function Home() {
                 Register your team
                 <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
               </Link>
-              <div className="mt-6">
-                <Link
-                  to="/rules"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:text-primary"
-                >
-                  Read the full rules &amp; regulations
-                  <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
-                </Link>
-              </div>
             </div>
           </Reveal>
         </section>

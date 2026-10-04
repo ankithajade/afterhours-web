@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import * as Tabs from "@radix-ui/react-tabs";
 
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
@@ -61,11 +62,127 @@ const KEY_RULES = [
   "The decision of the judging panel and Organizing Committee is final.",
 ];
 
+function Round1Content() {
+  return (
+    <div className="space-y-6">
+      <Reveal>
+        <section>
+          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+            Round 1 — Pre-Qualification
+          </h2>
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
+            18 Oct 2026, 12:00 AM IST – 22 Oct 2026, 11:59 PM IST
+          </p>
+          <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
+            The first screening stage. Teams get multiple problem statements and choose one to develop and submit a proposed solution for.
+          </p>
+        </section>
+      </Reveal>
+      <Reveal>
+        <div className="panel rounded-xl p-6">
+          <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Requirements
+          </h3>
+          <ul className="mt-4 space-y-2.5">
+            {ROUND_1_REQUIREMENTS.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-base leading-relaxed text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="panel rounded-xl p-6">
+          <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Evaluated on
+          </h3>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {ROUND_1_CRITERIA.map((c) => (
+              <span key={c} className="inline-flex items-center rounded-full border border-border bg-surface/50 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-foreground">
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Reveal>
+      <Reveal>
+        <p className="ah-prose text-base leading-relaxed text-muted-foreground">
+          Shortlisted teams are announced <strong className="text-foreground">25 October 2026</strong> and advance to the 24-hour Grand Finale, where they'll choose a theme and build a working prototype.
+        </p>
+      </Reveal>
+    </div>
+  );
+}
+
+function Round2Content() {
+  return (
+    <div className="space-y-6">
+      <Reveal>
+        <section>
+          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+            Round 2 — AfterHours 1.0: Final Offline Hackathon
+          </h2>
+          <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
+            30 Oct 2026, 09:30 AM IST – 31 Oct 2026, 12:00 PM IST
+          </p>
+          <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
+            Shortlisted teams build a functional prototype addressing a problem within one theme chosen from those provided by the organizers.
+          </p>
+        </section>
+      </Reveal>
+      <Reveal>
+        <div className="panel rounded-xl p-6">
+          <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Requirements
+          </h3>
+          <ul className="mt-4 space-y-2.5">
+            {ROUND_2_REQUIREMENTS.map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <span className="text-base leading-relaxed text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="panel glow-primary rounded-xl p-6">
+          <p className="text-base font-semibold leading-relaxed text-foreground">
+            ⚠ Important
+          </p>
+          <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
+            The problem statement submitted during Pre-Qualification <strong className="text-foreground">cannot be reused</strong> in the Finale. Teams found reusing it will be disqualified.
+          </p>
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="panel rounded-xl p-6">
+          <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Evaluated on
+          </h3>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {ROUND_2_CRITERIA.map((c) => (
+              <span key={c} className="inline-flex items-center rounded-full border border-border bg-surface/50 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-foreground">
+                {c}
+              </span>
+            ))}
+          </div>
+          <p className="ah-prose mt-4 text-sm leading-relaxed text-muted-foreground">
+            The jury's decision is final.
+          </p>
+        </div>
+      </Reveal>
+    </div>
+  );
+}
+
 function RulesPage() {
   return (
     <>
       <SiteHeader />
-      <main id="main" className="mx-auto w-full max-w-3xl px-5 pb-24 pt-12 sm:px-6 sm:pt-16">
+      <main id="main" className="mx-auto w-full max-w-5xl px-5 pb-24 pt-12 sm:px-6 sm:pt-16">
         <Link
           to="/"
           className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
@@ -91,158 +208,72 @@ function RulesPage() {
           </header>
         </Reveal>
 
-        {/* ── Round 1 ── */}
-        <Reveal className="mt-12">
-          <section>
-            <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
-              Round 1 — Pre-Qualification
-            </h2>
-            <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
-              18 Oct 2026, 12:00 AM IST – 22 Oct 2026, 11:59 PM IST
-            </p>
-            <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
-              The first screening stage. Teams get multiple problem statements and choose one to develop and submit a proposed solution for.
-            </p>
-          </section>
-        </Reveal>
+        {/* ── Rounds Desktop (Two Columns) ── */}
+        <div className="mt-14 hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
+          <Round1Content />
+          <Round2Content />
+        </div>
 
-        <Reveal className="mt-6">
-          <div className="panel rounded-xl p-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              Requirements
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {ROUND_1_REQUIREMENTS.map((item) => (
-                <li key={item} className="flex items-start gap-3">
+        {/* ── Rounds Mobile (Tabs) ── */}
+        <div className="mt-12 block md:hidden">
+          <Tabs.Root defaultValue="round1">
+            <Reveal>
+              <Tabs.List className="flex w-full gap-2 rounded-lg bg-surface/50 p-1">
+                <Tabs.Trigger
+                  value="round1"
+                  className="flex-1 rounded-md py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground transition-all hover:text-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
+                >
+                  Round 1
+                </Tabs.Trigger>
+                <Tabs.Trigger
+                  value="round2"
+                  className="flex-1 rounded-md py-2.5 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground transition-all hover:text-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-sm"
+                >
+                  Round 2
+                </Tabs.Trigger>
+              </Tabs.List>
+            </Reveal>
+
+            <Tabs.Content value="round1" className="mt-8 focus:outline-none">
+              <Round1Content />
+            </Tabs.Content>
+            
+            <Tabs.Content value="round2" className="mt-8 focus:outline-none">
+              <Round2Content />
+            </Tabs.Content>
+          </Tabs.Root>
+        </div>
+
+        <div className="mt-16 max-w-3xl">
+          {/* ── Key Rules ── */}
+          <Reveal>
+            <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+              Key Rules
+            </h2>
+          </Reveal>
+          <RevealGroup className="mt-6 space-y-3" stagger={0.07}>
+            {KEY_RULES.map((rule) => (
+              <RevealItem key={rule}>
+                <div className="panel ah-lift flex items-start gap-4 rounded-xl p-5">
                   <span
                     aria-hidden="true"
                     className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
                   />
-                  <span className="text-base leading-relaxed text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+                  <p className="ah-prose text-base leading-relaxed text-muted-foreground">{rule}</p>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealGroup>
 
-        <Reveal className="mt-4">
-          <div className="panel rounded-xl p-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              Evaluated on
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {ROUND_1_CRITERIA.map((c) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center rounded-full border border-border bg-surface/50 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-foreground"
-                >
-                  {c}
-                </span>
-              ))}
+          {/* ── Note ── */}
+          <Reveal className="mt-12">
+            <div className="rounded-xl border border-dashed border-border bg-surface/40 p-6">
+              <p className="ah-prose text-sm leading-relaxed text-muted-foreground">
+                This page summarizes the official rules from the AfterHours 1.0 Unstop listing. Please also make sure you've joined the official WhatsApp communication channel after registering, so you don't miss updates or deadline reminders.
+              </p>
             </div>
-          </div>
-        </Reveal>
-
-        <Reveal className="mt-4">
-          <p className="ah-prose text-base leading-relaxed text-muted-foreground">
-            Shortlisted teams are announced <strong className="text-foreground">25 October 2026</strong> and advance to the 24-hour Grand Finale, where they'll choose a theme and build a working prototype.
-          </p>
-        </Reveal>
-
-        {/* ── Round 2 ── */}
-        <Reveal className="mt-14">
-          <section>
-            <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
-              Round 2 — AfterHours 1.0: Final Offline Hackathon
-            </h2>
-            <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
-              30 Oct 2026, 09:30 AM IST – 31 Oct 2026, 12:00 PM IST
-            </p>
-            <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
-              Shortlisted teams build a functional prototype addressing a problem within one theme chosen from those provided by the organizers.
-            </p>
-          </section>
-        </Reveal>
-
-        <Reveal className="mt-6">
-          <div className="panel rounded-xl p-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              Requirements
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {ROUND_2_REQUIREMENTS.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                  />
-                  <span className="text-base leading-relaxed text-muted-foreground">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
-
-        <Reveal className="mt-4">
-          <div className="panel glow-primary rounded-xl p-6">
-            <p className="text-base font-semibold leading-relaxed text-foreground">
-              ⚠ Important
-            </p>
-            <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
-              The problem statement submitted during Pre-Qualification <strong className="text-foreground">cannot be reused</strong> in the Finale. Teams found reusing it will be disqualified.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal className="mt-4">
-          <div className="panel rounded-xl p-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              Evaluated on
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {ROUND_2_CRITERIA.map((c) => (
-                <span
-                  key={c}
-                  className="inline-flex items-center rounded-full border border-border bg-surface/50 px-3 py-1 font-mono text-xs uppercase tracking-[0.14em] text-foreground"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-            <p className="ah-prose mt-4 text-sm leading-relaxed text-muted-foreground">
-              The jury's decision is final.
-            </p>
-          </div>
-        </Reveal>
-
-        {/* ── Key Rules ── */}
-        <Reveal className="mt-14">
-          <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
-            Key Rules
-          </h2>
-        </Reveal>
-        <RevealGroup className="mt-6 space-y-3" stagger={0.07}>
-          {KEY_RULES.map((rule) => (
-            <RevealItem key={rule}>
-              <div className="panel ah-lift flex items-start gap-4 rounded-xl p-5">
-                <span
-                  aria-hidden="true"
-                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                />
-                <p className="ah-prose text-base leading-relaxed text-muted-foreground">{rule}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealGroup>
-
-        {/* ── Note ── */}
-        <Reveal className="mt-12">
-          <div className="rounded-xl border border-dashed border-border bg-surface/40 p-6">
-            <p className="ah-prose text-sm leading-relaxed text-muted-foreground">
-              This page summarizes the official rules from the AfterHours 1.0 Unstop listing. Please also make sure you've joined the official WhatsApp communication channel after registering, so you don't miss updates or deadline reminders.
-            </p>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </main>
       <SiteFooter />
     </>
