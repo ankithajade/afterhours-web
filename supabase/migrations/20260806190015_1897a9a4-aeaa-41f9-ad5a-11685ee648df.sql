@@ -46,7 +46,7 @@ INSERT INTO public.site_content (key, value, kind, section, label, sort_order) V
 ('hero.subhead', '"CODE BEYOND THE CLOCK"', 'text', 'hero', 'Subhead', 40),
 ('hero.subhead_accent_word', '"BEYOND"', 'text', 'hero', 'Accented word in subhead', 45),
 ('hero.tagline', '"Inter-College 24-Hour Technical Hackathon"', 'text', 'hero', 'Tagline', 50),
-('hero.blurb', '"One night. One room. One build. AFTERHOURS 1.0 is a 24-hour hackathon where teams ship something real between sunset and sunset."', 'longtext', 'hero', 'Intro paragraph', 60),
+('hero.blurb', '"AFTERHOURS is DBIT’s flagship 24-hour hackathon, bringing together the brightest builders to create, innovate, and ship in 24 hours."', 'longtext', 'hero', 'Intro paragraph', 60),
 ('hero.organizer_line', '"Organized by Department of Computer Science & Engineering, in association with AWS Student Builder Group, DBIT"', 'longtext', 'hero', 'Organizer lockup line', 70),
 ('event.dates_label', '"30 – 31 October 2026"', 'text', 'event', 'Dates label', 10),
 ('event.venue', '"To be confirmed"', 'text', 'event', 'Venue', 20),
