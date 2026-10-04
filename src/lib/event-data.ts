@@ -17,7 +17,7 @@ export const EVENT = {
   organizerLine:
     "Organized by Department of Computer Science & Engineering, in association with AWS Student Builder Group, DBIT",
   blurb:
-    "One night. One room. One build. AFTERHOURS 1.0 is a 24-hour hackathon where teams ship something real between sunset and sunset.",
+    "AFTERHOURS is DBIT’s flagship 24-hour hackathon, bringing together the brightest builders to create, innovate, and ship in 24 hours.",
   /** 30 Oct 2026, 09:30 IST — stored as a UTC instant so every visitor sees the same countdown. */
   startsAtIso: "2026-10-30T09:30:00+05:30",
   /** 31 Oct 2026, 09:30 IST — end of the 24-hour build window. */
