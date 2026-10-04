@@ -6,6 +6,8 @@ import { ClockGlyph } from "@/components/clock-glyph";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import collegeLogoBlack from "@/assets/college-logo-black.svg";
 import collegeLogoWhite from "@/assets/college-logo-white.svg";
+import awsSbgLogoBlack from "@/assets/aws-sbg-logo-black.svg";
+import awsSbgLogoWhite from "@/assets/aws-sbg-logo-white.svg";
 import awsSbgSquareWhite from "@/assets/aws-sbg-square-white.svg";
 import awsSbgSquareGrey from "@/assets/aws-sbg-square-grey.svg";
 import { useContent } from "@/lib/content";
@@ -89,32 +91,70 @@ export function Hero() {
       />
 
       <div className="relative mx-auto mt-2 grid w-full max-w-[84rem] items-center gap-12 px-4 sm:px-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-10">
-        {/* College logo — inline at mobile, absolute top-right from lg up. */}
+        {/* College logo — hidden on mobile (moved to new row), absolute top-right from lg up. */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 * s, delay: 0.1 * s, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-none lg:absolute lg:top-0 lg:right-0 lg:z-10 mb-4 lg:mb-0"
+          className="pointer-events-none absolute top-0 right-0 z-10 hidden lg:block"
         >
           <img
             src={collegeLogoBlack}
             alt="Don Bosco Institute of Technology"
             loading="eager"
-            className="h-10 w-auto max-w-[12rem] object-contain dark:hidden lg:h-[4.83rem] lg:max-w-[17.55rem]"
+            className="h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:hidden"
           />
           <img
             src={collegeLogoWhite}
             alt="Don Bosco Institute of Technology"
             loading="eager"
-            className="hidden h-10 w-auto max-w-[12rem] object-contain dark:block lg:h-[4.83rem] lg:max-w-[17.55rem]"
+            className="hidden h-[4.83rem] w-auto max-w-[17.55rem] object-contain dark:block"
           />
         </motion.div>
         <div className="@container">
+          {/* Mobile top row: AWS SBG lockup + College logo */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 * s, delay: 0.1 * s, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-6 flex items-center justify-between lg:hidden"
+          >
+            <div>
+              <img
+                src={awsSbgLogoBlack}
+                alt="AWS Student Builder Group"
+                loading="eager"
+                className="h-8 w-auto max-w-[10rem] object-contain dark:hidden"
+              />
+              <img
+                src={awsSbgLogoWhite}
+                alt="AWS Student Builder Group"
+                loading="eager"
+                className="hidden h-8 w-auto max-w-[10rem] object-contain dark:block"
+              />
+            </div>
+            <div>
+              <img
+                src={collegeLogoBlack}
+                alt="Don Bosco Institute of Technology"
+                loading="eager"
+                className="h-10 w-auto max-w-[10rem] object-contain dark:hidden"
+              />
+              <img
+                src={collegeLogoWhite}
+                alt="Don Bosco Institute of Technology"
+                loading="eager"
+                className="hidden h-10 w-auto max-w-[10rem] object-contain dark:block"
+              />
+            </div>
+          </motion.div>
+
+          {/* Desktop AWS text block (hidden on mobile) */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 * s, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-3"
+            className="hidden items-center gap-3 lg:flex"
           >
             <img
               src={awsSbgSquareWhite}

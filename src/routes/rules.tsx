@@ -108,9 +108,14 @@ function Round1Content() {
         </div>
       </Reveal>
       <Reveal>
-        <p className="ah-prose text-base leading-relaxed text-muted-foreground">
-          Shortlisted teams are announced <strong className="text-foreground">25 October 2026</strong> and advance to the 24-hour Grand Finale, where they'll choose a theme and build a working prototype.
-        </p>
+        <div className="panel rounded-xl p-6">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Results
+          </p>
+          <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
+            Shortlisted teams are announced on <strong className="text-foreground">25 October</strong>. Teams that qualify move straight into the Grand Finale, where they'll pick a theme and build a working prototype from scratch.
+          </p>
+        </div>
       </Reveal>
     </div>
   );
@@ -169,7 +174,14 @@ function Round2Content() {
               </span>
             ))}
           </div>
-          <p className="ah-prose mt-4 text-sm leading-relaxed text-muted-foreground">
+        </div>
+      </Reveal>
+      <Reveal>
+        <div className="panel rounded-xl p-6">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+            Results
+          </p>
+          <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
             The jury's decision is final.
           </p>
         </div>
@@ -210,8 +222,12 @@ function RulesPage() {
 
         {/* ── Rounds Desktop (Two Columns) ── */}
         <div className="mt-14 hidden md:grid md:grid-cols-2 md:gap-8 lg:gap-12">
-          <Round1Content />
-          <Round2Content />
+          <div className="rounded-2xl border border-border bg-surface/30 p-6 md:p-8">
+            <Round1Content />
+          </div>
+          <div className="rounded-2xl border border-border bg-surface/30 p-6 md:p-8">
+            <Round2Content />
+          </div>
         </div>
 
         {/* ── Rounds Mobile (Tabs) ── */}
@@ -234,22 +250,26 @@ function RulesPage() {
               </Tabs.List>
             </Reveal>
 
-            <Tabs.Content value="round1" className="mt-8 focus:outline-none">
-              <Round1Content />
-            </Tabs.Content>
-            
-            <Tabs.Content value="round2" className="mt-8 focus:outline-none">
-              <Round2Content />
-            </Tabs.Content>
+            <div className="mt-8 rounded-2xl border border-border bg-surface/30 p-6">
+              <Tabs.Content value="round1" className="focus:outline-none">
+                <Round1Content />
+              </Tabs.Content>
+              
+              <Tabs.Content value="round2" className="focus:outline-none">
+                <Round2Content />
+              </Tabs.Content>
+            </div>
           </Tabs.Root>
         </div>
 
-        <div className="mt-16 max-w-3xl">
+        <div className="mx-auto mt-16 max-w-3xl">
           {/* ── Key Rules ── */}
           <Reveal>
-            <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
-              Key Rules
-            </h2>
+            <div className="text-center">
+              <h2 className="font-display text-2xl font-bold leading-tight sm:text-3xl">
+                Key Rules
+              </h2>
+            </div>
           </Reveal>
           <RevealGroup className="mt-6 space-y-3" stagger={0.07}>
             {KEY_RULES.map((rule) => (
