@@ -194,7 +194,7 @@ function RulesPage() {
   return (
     <>
       <SiteHeader />
-      <main id="main" className="mx-auto w-full max-w-5xl px-5 pb-24 pt-12 sm:px-6 sm:pt-16">
+      <main id="main" className="mx-auto w-full max-w-7xl px-5 pb-24 pt-12 sm:px-6 sm:pt-16 lg:px-8 xl:px-12">
         <Link
           to="/"
           className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"

@@ -91,11 +91,18 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
       const stop = stops[i];
       if (stop !== undefined && !Number.isNaN(stop) && now >= stop) index = i;
     }
+    const REGISTRATION_CLOSE = Date.parse("2026-10-16T23:59:00+05:30");
     if (index < 0) {
-      const first = items[0];
-      headline = "Not started yet";
-      secondary = first ? `Opens ${first.date}` : "";
-      status = "before";
+      if (now < REGISTRATION_CLOSE) {
+        headline = "Registrations Open";
+        secondary = "Claim your spot before 16 October.";
+        status = "before";
+      } else {
+        const first = items[0];
+        headline = "Not started yet";
+        secondary = first ? `Opens ${first.date}` : "";
+        status = "before";
+      }
     } else if (!Number.isNaN(endMs) && now > endMs) {
       index = stops.length - 1;
       headline = "Completed";
@@ -174,6 +181,16 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
           {secondary ? (
             <p className="mt-2 text-base leading-relaxed text-muted-foreground">{secondary}</p>
           ) : null}
+          {headline === "Registrations Open" && (
+            <div className="mt-5">
+              <Link
+                to="/register"
+                className="inline-flex items-center justify-center rounded-md border border-border bg-surface/50 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-surface hover:text-primary"
+              >
+                Register now
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -219,6 +236,26 @@ export function Timeline() {
               <p className="ah-prose mt-1.5 max-w-2xl text-base leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
+              {item.title.includes("Pre-Qualification Round Begins") && (
+                <div className="mt-4">
+                  <Link
+                    to="/problem-statements"
+                    className="inline-flex items-center justify-center rounded-md border border-primary/30 bg-primary/10 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-primary transition-colors hover:bg-primary/20"
+                  >
+                    Problem Statements
+                  </Link>
+                </div>
+              )}
+              {item.kind === "event" && (
+                <div className="mt-4">
+                  <Link
+                    to="/themes"
+                    className="inline-flex items-center justify-center rounded-md border border-live/30 bg-live/10 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-live transition-colors hover:bg-live/20"
+                  >
+                    Themes
+                  </Link>
+                </div>
+              )}
             </RevealItem>
           ))}
         </RevealGroup>
