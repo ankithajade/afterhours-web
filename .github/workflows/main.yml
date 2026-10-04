@@ -1,0 +1,58 @@
+name: Deploy Afterhours
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: afterhours-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        shell: bash
+        env:
+          AWS_SSH_PRIVATE_KEY: ${{ secrets.AWS_SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$AWS_SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          ssh-keyscan -H 3.6.239.164 >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
+      - name: Upload source to server
+        run: |
+          rsync -az --delete \
+            --exclude='.git/' \
+            --exclude='.env' \
+            --exclude='.env.local' \
+            --exclude='.env.production' \
+            --exclude='node_modules/' \
+            --exclude='dist/' \
+            --exclude='.output/' \
+            . agencydeploy@3.6.239.164:/var/www/awsevents/afterhours/
+
+      - name: Build and restart Afterhours
+        run: |
+          ssh agencydeploy@3.6.239.164 << 'EOF'
+            set -e
+
+            cd /var/www/awsevents/afterhours
+
+            npm ci
+            npm run build
+
+            sudo systemctl restart afterhours
+            sudo systemctl is-active --quiet afterhours
+          EOF
