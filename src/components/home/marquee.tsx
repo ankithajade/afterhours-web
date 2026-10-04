@@ -1,3 +1,4 @@
+import { useState } from "react";
 import awsMobileBlack from "@/assets/aws-mobile-black.svg";
 import awsMobileWhite from "@/assets/aws-mobile-white(2).svg";
 import unstopBlue from "@/assets/unstop-blue.svg";
@@ -31,6 +32,8 @@ const ITEMS = [
 
 /** Slow branding ticker between major sections. Pauses on hover. */
 export function BrandMarquee() {
+  const [isPaused, setIsPaused] = useState<boolean | null>(null);
+
   const strip = (
     <div className="flex shrink-0 items-center">
       {ITEMS.map((item) => (
@@ -67,7 +70,9 @@ export function BrandMarquee() {
   return (
     <div
       aria-hidden="true"
-      className="ah-marquee overflow-hidden border-y border-border/70 bg-surface/30 py-4 backdrop-blur-sm"
+      onClick={() => setIsPaused((prev) => !prev)}
+      data-paused={isPaused !== null ? String(isPaused) : undefined}
+      className="ah-marquee overflow-hidden border-y border-border/70 bg-surface/30 py-4 backdrop-blur-sm cursor-pointer"
     >
       <div className="ah-marquee__track">
         {strip}

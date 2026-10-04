@@ -709,8 +709,17 @@
   animation: ah-marquee-scroll 42s linear infinite;
 }
 
-.ah-marquee:hover .ah-marquee__track {
+@media (hover: hover) {
+  .ah-marquee:hover .ah-marquee__track {
+    animation-play-state: paused;
+  }
+}
+
+.ah-marquee[data-paused="true"] .ah-marquee__track {
   animation-play-state: paused;
+}
+.ah-marquee[data-paused="false"] .ah-marquee__track {
+  animation-play-state: running;
 }
 
 @keyframes ah-marquee-scroll {
