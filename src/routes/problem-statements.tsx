@@ -5,7 +5,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { Reveal } from "@/components/reveal";
 import { ClockGlyph } from "@/components/clock-glyph";
 
-const description = "Problem statements for the AFTERHOURS 1.0 Pre-Qualification round drop here on 18 October 2026.";
+const description = "Problem statements for the AFTERHOURS 1.0 Pre-Qualification round drop here on 20 October 2026.";
 
 export const Route = createFileRoute("/problem-statements")({
   head: () => ({
@@ -55,7 +55,7 @@ function ProblemStatementsPage() {
               Problem Statements
             </h1>
             <p className="ah-prose mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Problem statements drop here on <strong className="text-foreground">18 October</strong>, when the Pre-Qualification round opens.
+              Problem statements drop here on <strong className="text-foreground">20 October</strong>, when the Pre-Qualification round opens.
             </p>
           </Reveal>
 

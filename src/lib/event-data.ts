@@ -66,24 +66,24 @@ export type TimelineItem = {
 
 export const TIMELINE: TimelineItem[] = [
   {
-    date: "18 OCTOBER",
-    dateISO: "2026-10-18",
+    date: "20 OCTOBER",
+    dateISO: "2026-10-20",
     title: "Pre-Qualification Round Begins (Online)",
     description:
-      "The online pre-qualification round opens 18 October. Registered teams attempt it remotely — no travel, no venue.",
+      "The online pre-qualification round opens 20 October. Registered teams attempt it remotely — no travel, no venue.",
     kind: "milestone",
   },
   {
-    date: "22 OCTOBER",
-    dateISO: "2026-10-22",
+    date: "23 OCTOBER",
+    dateISO: "2026-10-23",
     title: "Pre-Qualification Round Closes",
     description:
-      "The online pre-qualification round closes 22 October. Teams will not be able to submit their entries after this date.",
+      "The online pre-qualification round closes 23 October. Teams will not be able to submit their entries after this date.",
     kind: "milestone",
   },
   {
-    date: "25 OCTOBER",
-    dateISO: "2026-10-25",
+    date: "27 OCTOBER",
+    dateISO: "2026-10-27",
     title: "Qualified Teams Announced",
     description:
       "Results of the pre-qualification round are published. Qualified teams are confirmed for the offline finale.",
@@ -137,7 +137,7 @@ export const ABOUT_CARDS: AboutCard[] = [
   },
   {
     title: "Qualify before you build",
-    body: "Most hackathons take anyone who signs up. Here an online round on 18 October filters the field first, so the 24 hours are spent alongside teams that already proved they can ship.",
+    body: "Most hackathons take anyone who signs up. Here an online round on 20 October filters the field first, so the 24 hours are spent alongside teams that already proved they can ship.",
   },
   {
     title: "What 'beyond the clock' means",
@@ -161,7 +161,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Is there a round before the hackathon?",
-    a: "Yes. An online pre-qualification round begins on 18 October, and the qualified teams are announced on 25 October. Only qualified teams attend the 24-hour offline finale on 30 – 31 October.",
+    a: "Yes. An online pre-qualification round begins on 20 October, and the qualified teams are announced on 27 October. Only qualified teams attend the 24-hour offline finale on 30 – 31 October.",
   },
   {
     q: "What happens if my team doesn't qualify for the main round?",

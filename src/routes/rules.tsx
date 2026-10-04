@@ -113,7 +113,7 @@ function Round1Content() {
             Results
           </p>
           <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
-            Shortlisted teams are announced on <strong className="text-foreground">25 October</strong>. Teams that qualify move straight into the Grand Finale, where they'll pick a theme and build a working prototype from scratch.
+            Shortlisted teams are announced on <strong className="text-foreground">27 October</strong>. Teams that qualify move straight into the Grand Finale, where they'll pick a theme and build a working prototype from scratch.
           </p>
         </div>
       </Reveal>

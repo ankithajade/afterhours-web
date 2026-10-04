@@ -91,11 +91,11 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
       const stop = stops[i];
       if (stop !== undefined && !Number.isNaN(stop) && now >= stop) index = i;
     }
-    const REGISTRATION_CLOSE = Date.parse("2026-10-16T23:59:00+05:30");
+    const REGISTRATION_CLOSE = Date.parse("2026-10-22T23:59:00+05:30");
     if (index < 0) {
       if (now < REGISTRATION_CLOSE) {
         headline = "Registrations Open";
-        secondary = "Claim your spot before 16 October.";
+        secondary = "Claim your spot before 22 October.";
         status = "before";
       } else {
         const first = items[0];
