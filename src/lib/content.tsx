@@ -136,7 +136,7 @@ export function buildSiteContent(rows: SiteContentRow[]): SiteContent {
     details: list<DetailItem>(m, "details.items", DETAILS),
     faq: list<FaqItem>(m, "faq.items", FAQ),
     socials: list<SocialItem>(m, "socials.items", SOCIALS),
-    coordinators: list<Coordinator>(m, "coordinators.items", COORDINATORS),
+    coordinators: COORDINATORS,
     sponsors: {
       body: str(m, "sponsors.body", SPONSORS_BODY),
       contactEmail: rawStr(m, "sponsors.contact_email", CONTACT_EMAIL),

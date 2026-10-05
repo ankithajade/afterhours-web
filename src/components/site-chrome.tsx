@@ -141,18 +141,21 @@ export function SiteFooter() {
           </ul>
 
           {coordinators.some((c) => c.faculty) && (
-
             <div className="mt-8 border-t border-border pt-5">
-              <h2 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-                Faculty coordinator
+              <h2 className="font-mono text-xs uppercase tracking-[0.28em] text-primary">
+                Convenors
               </h2>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-3 space-y-3">
                 {coordinators
                   .filter((c) => c.faculty)
                   .map((c, i) => (
                     <li key={i} className="text-base">
-                      <span className="text-foreground">{c.name}</span>
-                      {c.role ? <span className="text-muted-foreground"> — {c.role}</span> : null}
+                      <span className="block text-foreground">{c.name}</span>
+                      {c.designation || c.role ? (
+                        <span className="block text-sm text-muted-foreground">
+                          {c.designation ?? c.role}
+                        </span>
+                      ) : null}
                     </li>
                   ))}
               </ul>

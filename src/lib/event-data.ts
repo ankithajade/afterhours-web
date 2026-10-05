@@ -208,7 +208,12 @@ export const COORDINATORS: Coordinator[] = [
   { name: "Sadhana S", phone: "+91 9141800861", designation: "AWS SBG Core Member" },
   {
     name: "Dr. Hemanth Kumar N P",
-    role: "General Queries",
+    designation: "Associate Professor, Dept of CSE",
+    faculty: true,
+  },
+  {
+    name: "Mrs. Champa C H",
+    designation: "Faculty Lead, AWS SBG DBIT",
     faculty: true,
   },
 ];
