@@ -14,6 +14,7 @@ import { Route as ProblemStatementsRouteImport } from './routes/problem-statemen
 import { Route as RegisterRouteImport } from './routes/register'
 import { Route as RulesRouteImport } from './routes/rules'
 import { Route as ThemesRouteImport } from './routes/themes'
+import { Route as VenueRouteImport } from './routes/venue'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const ThemesRoute = ThemesRouteImport.update({
   path: '/themes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VenueRoute = VenueRouteImport.update({
+  id: '/venue',
+  path: '/venue',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/register': typeof RegisterRoute
   '/rules': typeof RulesRoute
   '/themes': typeof ThemesRoute
+  '/venue': typeof VenueRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/register': typeof RegisterRoute
   '/rules': typeof RulesRoute
   '/themes': typeof ThemesRoute
+  '/venue': typeof VenueRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +70,15 @@ export interface FileRoutesById {
   '/register': typeof RegisterRoute
   '/rules': typeof RulesRoute
   '/themes': typeof ThemesRoute
+  '/venue': typeof VenueRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/problem-statements' | '/register' | '/rules' | '/themes'
+  fullPaths:
+    '/' | '/problem-statements' | '/register' | '/rules' | '/themes' | '/venue'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/problem-statements' | '/register' | '/rules' | '/themes'
+  to:
+    '/' | '/problem-statements' | '/register' | '/rules' | '/themes' | '/venue'
   id:
     | '__root__'
     | '/'
@@ -75,6 +86,7 @@ export interface FileRouteTypes {
     | '/register'
     | '/rules'
     | '/themes'
+    | '/venue'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,6 +95,7 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
   RulesRoute: typeof RulesRoute
   ThemesRoute: typeof ThemesRoute
+  VenueRoute: typeof VenueRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThemesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/venue': {
+      id: '/venue'
+      path: '/venue'
+      fullPath: '/venue'
+      preLoaderRoute: typeof VenueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -131,6 +151,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterRoute: RegisterRoute,
   RulesRoute: RulesRoute,
   ThemesRoute: ThemesRoute,
+  VenueRoute: VenueRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
