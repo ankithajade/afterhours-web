@@ -113,40 +113,6 @@ export function SiteFooter() {
             {hero.tagline} · {event.datesLabel}. {event.startTimeLabel}.
           </p>
 
-          <div className="mt-5 border-t border-border pt-4">
-            <h2 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              Venue
-            </h2>
-            <Link
-              to="/venue"
-              className="group relative mt-2 block h-28 w-full max-w-xs overflow-hidden rounded-lg border border-border bg-surface/50 transition-colors hover:border-primary/50"
-              title="View venue details"
-            >
-              <iframe
-                src="https://maps.google.com/maps?q=12.8821969,77.4448703&z=15&output=embed"
-                title="DBIT Bengaluru Map Teaser"
-                loading="lazy"
-                className="pointer-events-none h-full w-full border-0 opacity-80 transition-opacity group-hover:opacity-100"
-              />
-            </Link>
-            <div className="mt-2.5 flex flex-col gap-1 text-xs">
-              <Link
-                to="/venue"
-                className="inline-flex items-center gap-1 font-mono uppercase tracking-wider text-primary hover:underline"
-              >
-                View venue details &rarr;
-              </Link>
-              <a
-                href="https://maps.app.goo.gl/8byKXP1EANUoiWSFA"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
-              >
-                Don Bosco Institute of Technology — Open in Google Maps &rarr;
-              </a>
-            </div>
-          </div>
-
           <ul className="mt-6 flex items-center gap-3">
             {socials.map((s) => {
               const Icon = SOCIAL_ICONS[s.icon] ?? Globe;
@@ -231,6 +197,40 @@ export function SiteFooter() {
               </a>
             </li>
           </ul>
+
+          <div className="mt-6 border-t border-border pt-5">
+            <h2 className="font-mono text-xs uppercase tracking-[0.28em] text-muted-foreground">
+              Venue
+            </h2>
+            <Link
+              to="/venue"
+              className="group relative mt-2.5 block h-28 w-full max-w-xs overflow-hidden rounded-lg border border-border bg-surface/50 transition-colors hover:border-primary/50"
+              title="View venue details"
+            >
+              <iframe
+                src="https://maps.google.com/maps?q=12.8821969,77.4448703&z=15&output=embed"
+                title="DBIT Bengaluru Map Teaser"
+                loading="lazy"
+                className="pointer-events-none h-full w-full border-0 opacity-80 transition-opacity group-hover:opacity-100"
+              />
+            </Link>
+            <div className="mt-2.5 flex flex-col gap-1 text-xs">
+              <Link
+                to="/venue"
+                className="inline-flex items-center gap-1 font-mono uppercase tracking-wider text-primary hover:underline"
+              >
+                View venue details &rarr;
+              </Link>
+              <a
+                href="https://maps.app.goo.gl/8byKXP1EANUoiWSFA"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Don Bosco Institute of Technology — Open in Google Maps &rarr;
+              </a>
+            </div>
+          </div>
         </div>
 
         <div>
