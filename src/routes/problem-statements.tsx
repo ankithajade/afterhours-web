@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { ClockGlyph } from "@/components/clock-glyph";
 
 const description =
-  "Pre-qualification problem statements for AFTERHOURS 1.0 — 24-Hour Hackathon at DBIT. Dropping on 20 October 2026.";
+  "Pre-qualification problem statements for AFTERHOURS 1.0 DBIT Hackathon — hosted by AWS Student Builder Group (AWS SBG DBIT) at Don Bosco Institute of Technology.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/problem-statements";
 const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
@@ -14,15 +14,15 @@ const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png
 export const Route = createFileRoute("/problem-statements")({
   head: () => ({
     meta: [
-      { title: "Problem Statements — AFTERHOURS 1.0 | DBIT Hackathon" },
+      { title: "Problem Statements — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "description", content: description },
-      { property: "og:title", content: "Problem Statements — AFTERHOURS 1.0" },
+      { property: "og:title", content: "Problem Statements — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Problem Statements — AFTERHOURS 1.0" },
+      { name: "twitter:title", content: "Problem Statements — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: OG_IMAGE },
     ],

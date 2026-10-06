@@ -17,25 +17,25 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EVENT, REGISTER_URL } from "@/lib/event-data";
 
 const description =
-  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college hackathon on 30–31 October 2026, hosted by AWS Student Builder Group, DBIT. Register your team of 2–4 on Unstop.";
+  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Register your team of 2–4 on Unstop.";
 
 const SITE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AFTERHOURS 1.0 — 24-Hour Hackathon | DBIT AWS Student Club" },
+      { title: "AFTERHOURS 1.0 — DBIT Hackathon | AWS Student Builder Group (AWS SBG)" },
       { name: "description", content: description },
-      { property: "og:title", content: "AFTERHOURS 1.0 — DBIT's 24-Hour Hackathon" },
+      { property: "og:title", content: "AFTERHOURS 1.0 — DBIT Hackathon | AWS SBG" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: SITE_URL },
       { property: "og:image", content: `${SITE_URL}og-afterhours.png` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "AFTERHOURS 1.0 — 24-hour inter-college hackathon at DBIT Bengaluru, 30–31 October 2026" },
+      { property: "og:image:alt", content: "AFTERHOURS 1.0 — 24-hour inter-college hackathon by AWS SBG at DBIT Bengaluru, 30–31 October 2026" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "AFTERHOURS 1.0 — DBIT's 24-Hour Hackathon" },
+      { name: "twitter:title", content: "AFTERHOURS 1.0 — DBIT Hackathon | AWS SBG" },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: `${SITE_URL}og-afterhours.png` },
     ],
@@ -47,40 +47,72 @@ export const Route = createFileRoute("/")({
 function Home() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Event",
-    name: "AFTERHOURS 1.0 — 24-Hour Hackathon",
-    description: EVENT.blurb,
-    startDate: "2026-10-30T09:30:00+05:30",
-    endDate: "2026-10-31T12:00:00+05:30",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    eventStatus: "https://schema.org/EventScheduled",
-    url: SITE_URL,
-    image: `${SITE_URL}og-afterhours.png`,
-    location: {
-      "@type": "Place",
-      name: "Don Bosco Institute of Technology (DBIT)",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Kumbalagodu, Mysore Road",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        postalCode: "560074",
-        addressCountry: "IN",
+    "@graph": [
+      {
+        "@type": "Event",
+        "@id": `${SITE_URL}#event`,
+        name: "AFTERHOURS 1.0 — 24-Hour Hackathon",
+        alternateName: [
+          "DBIT Hackathon",
+          "AWS SBG Hackathon",
+          "AWS Student Builder Group Hackathon",
+          "AfterHours 1.0 Hackathon",
+        ],
+        description: EVENT.blurb,
+        startDate: "2026-10-30T09:30:00+05:30",
+        endDate: "2026-10-31T12:00:00+05:30",
+        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+        eventStatus: "https://schema.org/EventScheduled",
+        url: SITE_URL,
+        image: `${SITE_URL}og-afterhours.png`,
+        location: {
+          "@type": "Place",
+          name: "Don Bosco Institute of Technology (DBIT)",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Kumbalagodu, Mysuru Road",
+            addressLocality: "Bengaluru",
+            addressRegion: "Karnataka",
+            postalCode: "560074",
+            addressCountry: "IN",
+          },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "12.882197",
+            longitude: "77.44487",
+          },
+        },
+        organizer: {
+          "@type": "Organization",
+          name: "AWS Student Builder Group (AWS SBG DBIT)",
+          alternateName: "AWS SBG DBIT",
+          url: SITE_URL,
+        },
+        performer: {
+          "@type": "Organization",
+          name: "Department of Computer Science & Engineering, DBIT Bengaluru",
+        },
+        offers: {
+          "@type": "Offer",
+          price: "1000",
+          priceCurrency: "INR",
+          url: "https://unstop.com/hackathons/afterhours-10-don-bosco-institute-of-technology-bengaluru-1735661",
+          availability: "https://schema.org/InStock",
+          validFrom: "2026-10-01T00:00:00+05:30",
+        },
       },
-    },
-    organizer: {
-      "@type": "Organization",
-      name: "DBIT AWS Student Club",
-      url: SITE_URL,
-    },
-    offers: {
-      "@type": "Offer",
-      price: "1000",
-      priceCurrency: "INR",
-      url: "https://unstop.com/hackathons/afterhours-10-don-bosco-institute-of-technology-dbit-mumbai-1463765",
-      availability: "https://schema.org/InStock",
-      validFrom: "2026-10-01T00:00:00+05:30",
-    },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}#website`,
+        url: SITE_URL,
+        name: "AFTERHOURS 1.0 — DBIT Hackathon",
+        description: description,
+        publisher: {
+          "@type": "Organization",
+          name: "AWS Student Builder Group, DBIT",
+        },
+      },
+    ],
   };
 
   return (

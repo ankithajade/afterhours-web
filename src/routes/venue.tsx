@@ -16,15 +16,15 @@ const FULL_ADDRESS = "Don Bosco Institute of Technology, Kumbalagodu, Mysuru Roa
 export const Route = createFileRoute("/venue")({
   head: () => ({
     meta: [
-      { title: "Venue & Directions — AFTERHOURS 1.0 | DBIT Bengaluru" },
+      { title: "Venue & Directions — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "description", content: description },
-      { property: "og:title", content: "Venue & Directions — AFTERHOURS 1.0" },
+      { property: "og:title", content: "Venue & Directions — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Venue & Directions — AFTERHOURS 1.0" },
+      { name: "twitter:title", content: "Venue & Directions — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: OG_IMAGE },
     ],

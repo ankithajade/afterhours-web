@@ -7,7 +7,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { UNSTOP_URL } from "@/lib/event-data";
 
 const description =
-  "Everything to know before registering for AFTERHOURS 1.0 — the ₹1,000 team fee, pre-qualification round structure, refund policy and WhatsApp channel updates.";
+  "Everything to know before registering for AFTERHOURS 1.0 DBIT Hackathon — hosted by AWS Student Builder Group (AWS SBG DBIT). Team fee, pre-qualification & refund policy.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/register";
 const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
@@ -15,15 +15,15 @@ const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Before You Register — AFTERHOURS 1.0 | DBIT Hackathon" },
+      { title: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "description", content: description },
-      { property: "og:title", content: "Before You Register — AFTERHOURS 1.0" },
+      { property: "og:title", content: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Before You Register — AFTERHOURS 1.0" },
+      { name: "twitter:title", content: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: OG_IMAGE },
     ],

@@ -88,21 +88,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AFTERHOURS 1.0 — 24-Hour Hackathon | DBIT AWS Student Club" },
+      { title: "AFTERHOURS 1.0 — DBIT Hackathon | AWS Student Builder Group (AWS SBG)" },
       {
         name: "description",
         content:
-          "AFTERHOURS 1.0 — DBIT, Bengaluru's flagship 24-hour inter-college hackathon on 30–31 October 2026, hosted by AWS Student Builder Group, DBIT. Register your team of 2–4 on Unstop.",
+          "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Register your team of 2–4 on Unstop.",
       },
       {
         name: "keywords",
         content:
-          "AFTERHOURS 1.0, DBIT Hackathon, Don Bosco Institute of Technology, AWS Student Club DBIT, 24-hour hackathon, Bengaluru hackathon, college hackathon, engineering hackathon 2026, Unstop hackathon",
+          "aws sbg hackathon, dbit hackathon, AWS Student Builder Group, DBIT, AFTERHOURS 1.0, Don Bosco Institute of Technology hackathon, aws sbg dbit, bengaluru hackathon 2026, 24 hour hackathon bengaluru, unstop dbit hackathon, afterhours hackathon, hexaverse cloudfest",
       },
-      { name: "author", content: "DBIT AWS Student Club" },
-      { name: "robots", content: "index, follow" },
+      { name: "author", content: "AWS Student Builder Group (AWS SBG DBIT)" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
+      { name: "format-detection", content: "telephone=no" },
       { name: "theme-color", content: "#0b1220" },
-      { property: "og:site_name", content: "AFTERHOURS 1.0" },
+      { name: "geo.region", content: "IN-KA" },
+      { name: "geo.placename", content: "Bengaluru, Karnataka, India" },
+      { name: "geo.position", content: "12.882197;77.44487" },
+      { name: "ICBM", content: "12.882197, 77.44487" },
+      { property: "og:site_name", content: "AFTERHOURS 1.0 — DBIT Hackathon" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
