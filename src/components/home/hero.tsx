@@ -239,7 +239,7 @@ export function Hero() {
               <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
             </Link>
             <a
-              href="#details"
+              href="#timeline"
               className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-surface"
             >
               Event details

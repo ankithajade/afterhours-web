@@ -145,7 +145,7 @@ function Home() {
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
                 2–4 members, team lead included. ₹1,000 per team on Unstop
-                — registrations close 22 October 2026.
+                — registrations close 24 October 2026 (7:30 PM).
               </p>
               <Link
                 to={REGISTER_URL}

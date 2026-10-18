@@ -185,7 +185,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Where do I register?",
-    a: "Registration is handled on Unstop. The register buttons on this page take you to the AFTERHOURS 1.0 listing, where you'll find the full instructions and can complete your team's registration and payment.",
+    a: "Registration is handled on Unstop. The register buttons on this page take you to the AFTERHOURS 1.0 listing, where you'll find the full instructions and can complete your team's registration and payment. The last date to register is 24 October 2026 at 7:30 PM.",
   },
   {
     q: "How do I know my slot is confirmed?",
