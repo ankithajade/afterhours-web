@@ -63,7 +63,7 @@ function ProblemStatementsPage() {
               Problem Statements
             </h1>
             <p className="ah-prose mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Problem statements drop here on <strong className="text-foreground">20 October</strong>, when the Pre-Qualification round opens.
+              Problem statements drop here on <strong className="text-foreground">21 October</strong>, when the Pre-Qualification round opens.
             </p>
           </Reveal>
 
