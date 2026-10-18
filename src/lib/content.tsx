@@ -130,11 +130,11 @@ export function buildSiteContent(rows: SiteContentRow[]): SiteContent {
     },
     about: {
       lede: str(m, "about.lede", ABOUT_LEDE),
-      cards: list<AboutCard>(m, "about.cards", ABOUT_CARDS),
+      cards: ABOUT_CARDS,
     },
     timeline: TIMELINE,
     details: list<DetailItem>(m, "details.items", DETAILS),
-    faq: list<FaqItem>(m, "faq.items", FAQ),
+    faq: FAQ,
     socials: list<SocialItem>(m, "socials.items", SOCIALS),
     coordinators: COORDINATORS,
     sponsors: {
