@@ -218,3 +218,104 @@ export const COORDINATORS: Coordinator[] = [
   },
 ];
 
+export type ProblemStatement = {
+  id: string;
+  number: string;
+  title: string;
+  domain: string;
+  statement: string;
+  challenge: string;
+  challengingAspect: string;
+  coreTechniques?: string[];
+};
+
+export const PROBLEM_STATEMENTS: ProblemStatement[] = [
+  {
+    id: "outage-investigator",
+    number: "01",
+    title: "Outage Investigator",
+    domain: "Cybersecurity · Network observability · Incident response",
+    statement:
+      "When a large digital service becomes unavailable, the cause may be a network failure, misconfiguration, compromised account, overloaded component or cascading dependency failure. Operators need to distinguish symptoms from root causes quickly.",
+    challenge:
+      "Build an incident investigation platform that ingests simulated network events, application logs and service health data, correlates related failures, reconstructs an incident timeline and recommends containment actions.",
+    challengingAspect:
+      "The system must distinguish correlated events from plausible root causes and provide evidence for its conclusions. Teams can use deterministic rules and graph analysis; AI is optional.",
+  },
+  {
+    id: "selective-disclosure-digital-id",
+    number: "02",
+    title: "Selective-Disclosure Digital ID",
+    domain: "Cybersecurity · Privacy · Digital identity",
+    statement:
+      "Proving you are over 18, a student or eligible for a service usually means handing over a full ID document containing far more than the verifier needs.",
+    challenge:
+      "Build a verifiable credential system that lets users prove selected claims while minimising disclosure, and that supports expiry and revocation.",
+    challengingAspect:
+      "The system must resist forged credentials, replayed proofs and unauthorised verification. Teams must clearly explain the trust assumptions behind their design.",
+    coreTechniques: [
+      "Public-key cryptography",
+      "Digital signatures",
+      "Selective disclosure",
+      "Optionally zero-knowledge proofs",
+    ],
+  },
+  {
+    id: "continuous-session-authentication",
+    number: "03",
+    title: "Continuous Session Authentication",
+    domain: "Cybersecurity · Authentication · Machine learning",
+    statement:
+      "Passwords and OTPs are phished, leaked or SIM-swapped, and once a user logs in, the session is trusted blindly. Account takeovers often go undetected until money or data is gone.",
+    challenge:
+      "Design a continuous authentication system that verifies users throughout a session using behavioural signals such as typing rhythm, navigation style and device context. It should produce a risk score, trigger step-up verification and give administrators a monitoring dashboard.",
+    challengingAspect:
+      "Behavioural data is itself sensitive, so privacy must be protected. The system must handle legitimate changes (a new device, an injured hand) without locking out real users, while staying robust against an attacker who tries to mimic the user.",
+  },
+  {
+    id: "deepfake-detection-takedown-tracker",
+    number: "04",
+    title: "Deepfake Detection & Takedown Tracker",
+    domain: "Trust & safety · Media forensics · Content provenance",
+    statement:
+      "Deepfakes spread across platforms faster than they can be verified, flagged or removed. Victims face a slow, manual takedown process across many sites, and copies keep reappearing.",
+    challenge:
+      "Build a system that detects likely manipulated media, tracks its spread across copies and re-uploads, and helps victims file takedown requests efficiently.",
+    challengingAspect:
+      "Detectors are imperfect, so the system needs confidence levels, an appeal path for wrongly flagged content, and a way to prove authenticity at the source.",
+    coreTechniques: [
+      "Perceptual hashing",
+      "Similarity search",
+      "Provenance metadata",
+    ],
+  },
+  {
+    id: "smart-microgrid-energy-scheduler",
+    number: "05",
+    title: "Smart Microgrid Energy Scheduler",
+    domain: "Smart energy · IoT · Optimisation",
+    statement:
+      "Campuses, factories and housing societies are adding solar panels, batteries and EV chargers, but without coordination they still draw peak grid power at peak prices.",
+    challenge:
+      "Design a scheduler that decides in real time when to charge, discharge, shift loads or sell energy back, using forecasts of demand, generation and tariffs.",
+    challengingAspect:
+      "Forecasts are always wrong, batteries degrade with use, and critical loads must never be dropped. The system must stay robust under uncertainty and be tested in simulation.",
+    coreTechniques: [
+      "Optimisation under uncertainty",
+      "Forecasting",
+    ],
+  },
+  {
+    id: "fictional-city-simulator",
+    number: "06",
+    title: "Fictional City Simulator",
+    domain: "Simulation · Complex systems · Optimisation",
+    statement:
+      "Can you build a digital world that behaves realistically enough to experiment with decisions before making them in real life? Policy changes such as new bus schedules or a flooded road have knock-on effects planners struggle to foresee.",
+    challenge:
+      "Teams receive specifications for a fictional city with residents, transport networks, businesses, utilities and limited public resources. Build an interactive simulation in which changes to one part of the city affect other parts, for example transport schedules affecting commuter flows, congestion, travel times and demand for other services.",
+    challengingAspect:
+      "Judges introduce a policy change or unexpected event, and teams must use their simulation to predict the consequences and compare possible responses. The test is whether the model represents meaningful interactions between systems, or is just a collection of unrelated charts.",
+  },
+];
+

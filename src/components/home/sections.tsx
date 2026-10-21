@@ -1,12 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
-import { ChevronDown } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Clock,
+  Download,
+  ExternalLink,
+  FileDown,
+  FileText,
+  Presentation,
+} from "lucide-react";
 import { animate, motion, useInView, useReducedMotion } from "motion/react";
 import { Link } from "@tanstack/react-router";
 import { SectionShell, TbcBadge } from "@/components/section";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { useContent } from "@/lib/content";
-import type { FaqItem } from "@/lib/event-data";
+import { UNSTOP_URL, type FaqItem } from "@/lib/event-data";
 
 /** Counts a numeric figure up from zero when it scrolls into view. */
 export function CountUp({ value, prefix = "", suffix = "" }: { value: number; prefix?: string; suffix?: string }) {
@@ -39,7 +48,9 @@ export function CountUp({ value, prefix = "", suffix = "" }: { value: number; pr
 }
 
 export function About() {
-  const { about } = useContent();
+  const problemStatementsPdfUrl = `${import.meta.env.BASE_URL}AfterHours_1.0_Pre-Qualification_Round_Problem_Statements.pdf`;
+  const pptTemplateUrl = `${import.meta.env.BASE_URL}AfterHours%201.0%20PPT%20Template.pptx`;
+
   return (
     <SectionShell
       id="about"
@@ -50,10 +61,140 @@ export function About() {
           <span className="text-primary">actually run</span>.
         </>
       }
-      lede={about.lede}
     >
-      {/* Cards removed — only the section heading and intro lede remain. */}
-      <></>
+      <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Box 1: Registrations Open & Last Date */}
+        <RevealItem>
+          <div className="panel ah-lift relative flex flex-col justify-between h-full rounded-2xl border border-primary/40 bg-surface/40 p-6 sm:p-7 shadow-lg transition-all duration-300 hover:border-primary">
+            <div>
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
+                  <span className="h-2 w-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
+                  Registrations Open
+                </span>
+                <span className="font-mono text-xs text-muted-foreground">Round 1</span>
+              </div>
+
+              <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                Slots Are Open
+              </h3>
+
+              <div className="mt-3.5 space-y-2">
+                <div className="flex items-start gap-2.5 rounded-lg border border-primary/20 bg-primary/[0.05] p-3 text-xs">
+                  <Clock className="h-4 w-4 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                  <div>
+                    <span className="font-mono uppercase font-semibold text-primary tracking-wider block">
+                      Last Date to Register
+                    </span>
+                    <strong className="text-foreground text-sm font-bold block mt-0.5">
+                      24 October 2026, 07:30 PM IST
+                    </strong>
+                  </div>
+                </div>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Teams of 2–4 members. Secure your spot on Unstop before the registration window closes.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-border/70">
+              <a
+                href={UNSTOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ah-magnetic inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground shadow-md transition-all hover:bg-primary/90"
+              >
+                Register on Unstop
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </RevealItem>
+
+        {/* Box 2: Problem Statements PDF */}
+        <RevealItem delay={100}>
+          <div className="panel ah-lift relative flex flex-col justify-between h-full rounded-2xl border border-border/80 bg-surface/40 p-6 sm:p-7 shadow-lg transition-all duration-300 hover:border-primary/50">
+            <div>
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  <FileText className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                  Pre-Qualification
+                </span>
+                <span className="font-mono text-xs text-muted-foreground">PDF</span>
+              </div>
+
+              <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                Problem Statements
+              </h3>
+
+              <div className="mt-3.5 space-y-2">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Download the official problem statements PDF for the online round, covering cybersecurity, digital identity, microgrids, AI, and city simulation.
+                </p>
+                <div className="flex items-center gap-2 pt-1 font-mono text-xs text-primary">
+                  <Link
+                    to="/problem-statements"
+                    className="inline-flex items-center gap-1 underline-offset-4 hover:underline"
+                  >
+                    Or browse interactively online
+                    <ArrowRight className="h-3 w-3" aria-hidden="true" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-border/70">
+              <a
+                href={problemStatementsPdfUrl}
+                download="AfterHours_1.0_Pre-Qualification_Round_Problem_Statements.pdf"
+                className="ah-magnetic inline-flex w-full items-center justify-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary transition-all hover:bg-primary/20 hover:border-primary"
+              >
+                <FileDown className="h-4 w-4" aria-hidden="true" />
+                Download PDF
+              </a>
+            </div>
+          </div>
+        </RevealItem>
+
+        {/* Box 3: Pre-Qualification PPT Template */}
+        <RevealItem delay={200}>
+          <div className="panel ah-lift relative flex flex-col justify-between h-full rounded-2xl border border-border/80 bg-surface/40 p-6 sm:p-7 shadow-lg transition-all duration-300 hover:border-primary/50">
+            <div>
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  <Presentation className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
+                  Submission Deck
+                </span>
+                <span className="font-mono text-xs text-muted-foreground">PPTX</span>
+              </div>
+
+              <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                PPT Template
+              </h3>
+
+              <div className="mt-3.5 space-y-2">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Download the official slide deck template for your Round 1 pitch. Covers technical approach, architectural blueprint, implementation, and impact.
+                </p>
+                <p className="font-mono text-xs text-muted-foreground pt-1">
+                  Format: .PPTX · Submit on Unstop
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-border/70">
+              <a
+                href={pptTemplateUrl}
+                download="AfterHours 1.0 PPT Template.pptx"
+                className="ah-magnetic inline-flex w-full items-center justify-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary transition-all hover:bg-primary/20 hover:border-primary"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Download PPT
+              </a>
+            </div>
+          </div>
+        </RevealItem>
+      </RevealGroup>
     </SectionShell>
   );
 }
