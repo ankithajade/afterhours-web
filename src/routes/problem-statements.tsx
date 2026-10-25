@@ -229,7 +229,7 @@ function ProblemStatementsPage() {
               <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-muted-foreground font-mono">
                 <div>
                   <span className="text-foreground font-semibold uppercase tracking-wider">Window: </span>
-                  21 Oct – 25 Oct 2026, 05:00 PM IST
+                  21 Oct – 25 Oct 2026, 11:59 PM IST (Extended)
                 </div>
                 <div>
                   <span className="text-foreground font-semibold uppercase tracking-wider">Team Size: </span>
@@ -294,7 +294,7 @@ function ProblemStatementsPage() {
                   Ready with your proposed solution?
                 </h3>
                 <p className="ah-prose text-sm leading-relaxed text-muted-foreground max-w-xl">
-                  Prepare your slide deck addressing the selected problem statement, architecture, implementation roadmap, and impact. Submit before 25 October 2026, 5:00 PM IST.
+                  Prepare your slide deck addressing the selected problem statement, architecture, implementation roadmap, and impact. Submit before 25 October 2026, 11:59 PM IST (extended).
                 </p>
               </div>
 

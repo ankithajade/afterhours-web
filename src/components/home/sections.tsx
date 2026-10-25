@@ -63,20 +63,20 @@ export function About() {
       }
     >
       <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Box 1: Registrations Open & Last Date */}
+        {/* Box 1: Registrations Closed & PPT Submission Extended */}
         <RevealItem>
           <div className="panel ah-lift relative flex flex-col justify-between h-full rounded-2xl border border-primary/40 bg-surface/40 p-6 sm:p-7 shadow-lg transition-all duration-300 hover:border-primary">
             <div>
               <div className="flex items-center justify-between gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-primary">
-                  <span className="h-2 w-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
-                  Registrations Open
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  <span className="h-2 w-2 rounded-full bg-muted-foreground/60" aria-hidden="true" />
+                  Registrations Closed
                 </span>
-                <span className="font-mono text-xs text-muted-foreground">Round 1</span>
+                <span className="font-mono text-xs text-primary font-semibold">Extended</span>
               </div>
 
               <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-                Slots Are Open
+                Round 1 Underway
               </h3>
 
               <div className="mt-3.5 space-y-2">
@@ -84,15 +84,15 @@ export function About() {
                   <Clock className="h-4 w-4 shrink-0 text-primary mt-0.5" aria-hidden="true" />
                   <div>
                     <span className="font-mono uppercase font-semibold text-primary tracking-wider block">
-                      Last Date to Register
+                      PPT Submission Extended Till
                     </span>
                     <strong className="text-foreground text-sm font-bold block mt-0.5">
-                      24 October 2026, 07:30 PM IST
+                      25 October 2026, 11:59 PM IST
                     </strong>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Teams of 2–4 members. Secure your spot on Unstop before the registration window closes.
+                  Registrations on Unstop are closed. Registered teams must submit their Pre-Qualification PPT on Unstop before the extended deadline.
                 </p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export function About() {
                 rel="noopener noreferrer"
                 className="ah-magnetic inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary-foreground shadow-md transition-all hover:bg-primary/90"
               >
-                Register on Unstop
+                Unstop Details
                 <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
             </div>
@@ -177,7 +177,7 @@ export function About() {
                   Download the official slide deck template for your Round 1 pitch. Covers technical approach, architectural blueprint, implementation, and impact.
                 </p>
                 <p className="font-mono text-xs text-muted-foreground pt-1">
-                  Format: .PPTX · Submit on Unstop
+                  Format: .PPTX · Submission extended till 11:59 PM
                 </p>
               </div>
             </div>
@@ -232,18 +232,10 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
       const stop = stops[i];
       if (stop !== undefined && !Number.isNaN(stop) && now >= stop) index = i;
     }
-    const REGISTRATION_CLOSE = Date.parse("2026-10-24T19:30:00+05:30");
     if (index < 0) {
-      if (now < REGISTRATION_CLOSE) {
-        headline = "Registrations Open";
-        secondary = "Claim your spot before 24 October (7:30 PM).";
-        status = "before";
-      } else {
-        const first = items[0];
-        headline = "Not started yet";
-        secondary = first ? `Opens ${first.date}` : "";
-        status = "before";
-      }
+      headline = "Round 1 Underway";
+      secondary = "PPT submissions extended till 25 October (11:59 PM).";
+      status = "before";
     } else if (!Number.isNaN(endMs) && now > endMs) {
       index = stops.length - 1;
       headline = "Completed";
@@ -322,16 +314,16 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
           {secondary ? (
             <p className="mt-2 text-base leading-relaxed text-muted-foreground">{secondary}</p>
           ) : null}
-          {headline === "Registrations Open" && (
-            <div className="mt-5">
-              <Link
-                to="/register"
-                className="inline-flex items-center justify-center rounded-md border border-border bg-surface/50 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-surface hover:text-primary"
-              >
-                Register now
-              </Link>
-            </div>
-          )}
+          <div className="mt-5">
+            <a
+              href={UNSTOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md border border-border bg-surface/50 px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-surface hover:text-primary"
+            >
+              Unstop Details
+            </a>
+          </div>
         </div>
       </div>
     </div>

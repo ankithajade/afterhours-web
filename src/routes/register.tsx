@@ -7,7 +7,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { UNSTOP_URL } from "@/lib/event-data";
 
 const description =
-  "Everything to know before registering for AFTERHOURS 1.0 DBIT Hackathon — hosted by AWS Student Builder Group (AWS SBG DBIT). Team fee, pre-qualification & refund policy.";
+  "Everything to know regarding AFTERHOURS 1.0 DBIT Hackathon hosted by AWS Student Builder Group (AWS SBG DBIT) — team fee, pre-qualification round guidelines & refund policy.";
 
 const PAGE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/register";
 const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png";
@@ -15,15 +15,15 @@ const OG_IMAGE = "https://awsevents.dbit.edu.in/afterhours-1.0/og-afterhours.png
 export const Route = createFileRoute("/register")({
   head: () => ({
     meta: [
-      { title: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
+      { title: "Event & Participation Details — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "description", content: description },
-      { property: "og:title", content: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
+      { property: "og:title", content: "Event & Participation Details — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: PAGE_URL },
       { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Register Your Team — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
+      { name: "twitter:title", content: "Event & Participation Details — DBIT Hackathon | AWS SBG AFTERHOURS 1.0" },
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: OG_IMAGE },
     ],
@@ -45,7 +45,6 @@ const NOTES = [
 function RegisterPage() {
   const [acknowledged, setAcknowledged] = useState(false);
   return (
-
     <>
       <SiteHeader />
       <main id="main" className="mx-auto w-full max-w-3xl px-5 pb-24 pt-12 sm:px-6 sm:pt-16">
@@ -63,15 +62,34 @@ function RegisterPage() {
         <Reveal className="mt-8">
           <header className="text-center">
             <p className="font-mono text-xs uppercase tracking-[0.32em] text-primary">
-              Read this first
+              Participation Info
             </p>
             <h1 className="mt-3 font-display text-[clamp(2rem,5.5vw,3.25rem)] font-bold uppercase leading-[1.05] tracking-[-0.02em]">
-              Before you register
+              Event Guidelines
             </h1>
             <p className="ah-prose mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
               A few things worth knowing about the fee, the rounds and how updates reach you.
             </p>
           </header>
+        </Reveal>
+
+        {/* Notice: Registrations Closed & PPT Extended */}
+        <Reveal className="mt-8">
+          <div className="panel rounded-xl border border-primary/40 bg-surface/60 p-5 sm:p-6 shadow-md">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                <span className="h-2 w-2 rounded-full bg-muted-foreground/60" aria-hidden="true" />
+                Registrations Closed
+              </span>
+              <span className="font-mono text-xs text-primary font-semibold">Extended</span>
+            </div>
+            <h2 className="mt-3 font-display text-lg font-bold text-foreground">
+              Pre-Qualification PPT Submission Extended
+            </h2>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+              Registrations on Unstop are closed (ended 24 October at 7:30 PM). The Pre-Qualification Round PPT submission has been extended till <strong className="text-foreground">25 October 2026, 11:59 PM IST</strong>.
+            </p>
+          </div>
         </Reveal>
 
         <RevealGroup className="mt-10 space-y-3" stagger={0.07}>
@@ -113,7 +131,7 @@ function RegisterPage() {
                 rel="noreferrer noopener"
                 className="ah-magnetic mt-5 inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground sm:w-auto"
               >
-                Register on Unstop
+                Unstop Details
                 <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
               </a>
             ) : (
@@ -123,7 +141,7 @@ function RegisterPage() {
                 aria-disabled="true"
                 className="mt-5 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-md border border-border bg-surface/60 px-8 py-4 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-muted-foreground opacity-60 sm:w-auto"
               >
-                Register on Unstop
+                Unstop Details
                 <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
               </button>
             )}

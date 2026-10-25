@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Globe, Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { ThemeToggle } from "@/components/theme";
 import { ClockGlyph } from "@/components/clock-glyph";
-import { REGISTER_URL } from "@/lib/event-data";
+import { UNSTOP_URL } from "@/lib/event-data";
 import { StaggeredMenu } from "@/components/staggered-menu/StaggeredMenu";
 import { useContent } from "@/lib/content";
 import awsSbgLogoDark from "@/assets/aws-sbg-logo-white.svg";
@@ -17,7 +17,7 @@ const NAV = [
   { label: "FAQ", link: "./#faq" },
   { label: "Venue", link: "venue" },
   { label: "Rules", link: "rules" },
-  { label: "Register", link: "register" },
+  { label: "Unstop", link: UNSTOP_URL },
 ];
 
 const SOCIAL_ICONS: Record<string, typeof Instagram> = {
@@ -81,7 +81,7 @@ export function SiteHeader() {
       />
       <StaggeredMenu
         items={NAV}
-        panelCta={{ label: "Register your team", link: "register" }}
+        panelCta={{ label: "Unstop Details", link: UNSTOP_URL }}
         socialItems={socials
           .filter((s) => s.href)
           .map((s) => ({
@@ -168,12 +168,14 @@ export function SiteFooter() {
           <h2 className="font-mono text-xs uppercase tracking-[0.28em] text-primary">Links</h2>
           <ul className="mt-4 space-y-2 text-base">
             <li>
-              <Link
-                to="/register"
+              <a
+                href={UNSTOP_URL}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="text-muted-foreground transition-colors hover:text-foreground"
               >
-                Register your team
-              </Link>
+                Unstop Details
+              </a>
             </li>
             <li>
               <Link

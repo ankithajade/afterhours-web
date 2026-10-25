@@ -14,10 +14,10 @@ import {
 } from "@/components/home/sections";
 import { Reveal } from "@/components/reveal";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
-import { EVENT, REGISTER_URL } from "@/lib/event-data";
+import { EVENT, UNSTOP_URL } from "@/lib/event-data";
 
 const description =
-  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Register your team of 2–4 on Unstop.";
+  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Pre-qualification round underway.";
 
 const SITE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/";
 
@@ -138,22 +138,23 @@ function Home() {
           <Reveal>
             <div className="panel glow-primary mx-auto max-w-3xl rounded-2xl p-10 text-center">
               <p className="font-mono text-xs uppercase tracking-[0.32em] text-primary">
-                Lock your slot
+                Round 1 Underway
               </p>
               <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.1rem)] font-bold leading-[1.1]">
-                Register your team
+                Registrations Closed
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                2–4 members, team lead included. ₹1,000 per team on Unstop
-                — registrations close 24 October 2026 (7:30 PM).
+                Registrations on Unstop are closed. Pre-qualification round PPT submission has been extended till 25 October 2026, 11:59 PM IST.
               </p>
-              <Link
-                to={REGISTER_URL}
+              <a
+                href={UNSTOP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ah-magnetic mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground"
               >
-                Register your team
+                Unstop Details
                 <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-              </Link>
+              </a>
             </div>
           </Reveal>
         </section>

@@ -92,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Register your team of 2–4 on Unstop.",
+          "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Pre-qualification round underway.",
       },
       {
         name: "keywords",

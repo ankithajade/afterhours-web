@@ -74,11 +74,11 @@ export const TIMELINE: TimelineItem[] = [
     kind: "milestone",
   },
   {
-    date: "25 OCTOBER (5:00 PM)",
+    date: "25 OCTOBER (11:59 PM)",
     dateISO: "2026-10-25",
     title: "Pre-Qualification Round Closes",
     description:
-      "The online pre-qualification round closes 25 October at 5:00 PM. Teams will not be able to submit their entries after this deadline.",
+      "The online pre-qualification round closes 25 October at 11:59 PM (extended). Teams will not be able to submit their entries after this deadline.",
     kind: "milestone",
   },
   {
@@ -185,7 +185,7 @@ export const FAQ: FaqItem[] = [
   },
   {
     q: "Where do I register?",
-    a: "Registration is handled on Unstop. The register buttons on this page take you to the AFTERHOURS 1.0 listing, where you'll find the full instructions and can complete your team's registration and payment. The last date to register is 24 October 2026 at 7:30 PM.",
+    a: "Registrations are currently closed (ended 24 October 2026 at 7:30 PM). Pre-qualification round PPT submission has been extended till 25 October 2026 at 11:59 PM IST on Unstop.",
   },
   {
     q: "How do I know my slot is confirmed?",

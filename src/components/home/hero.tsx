@@ -11,7 +11,7 @@ import awsMobileWhite from "@/assets/aws-mobile-white(2).svg";
 import awsSbgSquareWhite from "@/assets/aws-sbg-square-white.svg";
 import awsSbgSquareGrey from "@/assets/aws-sbg-square-grey.svg";
 import { useContent } from "@/lib/content";
-import { REGISTER_URL } from "@/lib/event-data";
+import { UNSTOP_URL } from "@/lib/event-data";
 import { useIntroPlay } from "@/lib/intro";
 
 /** Organizer logo: renders the CMS-uploaded image, or a labelled slot until one is added. */
@@ -231,13 +231,15 @@ export function Hero() {
             transition={{ duration: 0.7 * s, delay: 0.3 * s, ease: [0.16, 1, 0.3, 1] }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <Link
-              to={REGISTER_URL}
+            <a
+              href={UNSTOP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ah-magnetic inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-primary-foreground"
             >
-              Register your team
+              Unstop Details
               <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-            </Link>
+            </a>
             <a
               href="#timeline"
               className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3.5 font-mono text-sm font-semibold uppercase tracking-[0.16em] text-foreground transition-colors hover:bg-surface"

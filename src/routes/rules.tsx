@@ -78,7 +78,7 @@ function Round1Content() {
             Round 1 — Pre-Qualification
           </h2>
           <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
-            21 Oct 2026, 12:00 AM IST – 25 Oct 2026, 05:00 PM IST
+            21 Oct 2026, 12:00 AM IST – 25 Oct 2026, 11:59 PM IST (Extended)
           </p>
           <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
             The first screening stage. Teams get multiple problem statements and choose one to develop and submit a proposed solution for.
@@ -222,7 +222,7 @@ function RulesPage() {
               Rules &amp; Regulations
             </h1>
             <p className="ah-prose mt-4 text-lg leading-relaxed text-muted-foreground">
-              Two rounds, two different asks. Read both before you register.
+              Two rounds, two different asks. Review both stages and submission requirements.
             </p>
           </header>
         </Reveal>
