@@ -9,6 +9,7 @@ import {
   FileDown,
   FileText,
   Presentation,
+  Sparkles,
 } from "lucide-react";
 import { animate, motion, useInView, useReducedMotion } from "motion/react";
 import { Link } from "@tanstack/react-router";
@@ -63,36 +64,36 @@ export function About() {
       }
     >
       <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Box 1: Registrations Closed & PPT Submission Extended */}
+        {/* Box 1: Pre-Qualification Completed & Announcement Notice */}
         <RevealItem>
           <div className="panel ah-lift relative flex flex-col justify-between h-full rounded-2xl border border-primary/40 bg-surface/40 p-6 sm:p-7 shadow-lg transition-all duration-300 hover:border-primary">
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                  <span className="h-2 w-2 rounded-full bg-muted-foreground/60" aria-hidden="true" />
-                  Registrations Closed
+                  <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                  Round 1 Closed
                 </span>
-                <span className="font-mono text-xs text-primary font-semibold">Extended</span>
+                <span className="font-mono text-xs text-primary font-semibold">Stay Tuned</span>
               </div>
 
               <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-                Round 1 Underway
+                Pre-Qualification Completed
               </h3>
 
               <div className="mt-3.5 space-y-2">
                 <div className="flex items-start gap-2.5 rounded-lg border border-primary/20 bg-primary/[0.05] p-3 text-xs">
-                  <Clock className="h-4 w-4 shrink-0 text-primary mt-0.5" aria-hidden="true" />
+                  <Sparkles className="h-4 w-4 shrink-0 text-primary mt-0.5" aria-hidden="true" />
                   <div>
                     <span className="font-mono uppercase font-semibold text-primary tracking-wider block">
-                      PPT Submission Extended Till
+                      Qualified Teams Announcement
                     </span>
                     <strong className="text-foreground text-sm font-bold block mt-0.5">
-                      25 October 2026, 11:59 PM IST
+                      27 October 2026 · Stay Tuned
                     </strong>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  Registrations on Unstop are closed. Registered teams must submit their Pre-Qualification PPT on Unstop before the extended deadline.
+                  Pre-qualification round is completed and PPT submissions are officially closed. We will be announcing the qualified teams on 27 October — stay tuned!
                 </p>
               </div>
             </div>
@@ -177,7 +178,7 @@ export function About() {
                   Download the official slide deck template for your Round 1 pitch. Covers technical approach, architectural blueprint, implementation, and impact.
                 </p>
                 <p className="font-mono text-xs text-muted-foreground pt-1">
-                  Format: .PPTX · Submission extended till 11:59 PM
+                  Format: .PPTX · Submissions Closed
                 </p>
               </div>
             </div>
@@ -233,8 +234,8 @@ function StageRail({ items }: { items: ReturnType<typeof useContent>["timeline"]
       if (stop !== undefined && !Number.isNaN(stop) && now >= stop) index = i;
     }
     if (index < 0) {
-      headline = "Round 1 Underway";
-      secondary = "PPT submissions extended till 25 October (11:59 PM).";
+      headline = "Pre-Qualification Completed";
+      secondary = "Announcing qualified teams on 27 October · Stay tuned";
       status = "before";
     } else if (!Number.isNaN(endMs) && now > endMs) {
       index = stops.length - 1;

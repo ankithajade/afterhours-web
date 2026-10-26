@@ -17,7 +17,7 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { EVENT, UNSTOP_URL } from "@/lib/event-data";
 
 const description =
-  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Pre-qualification round underway.";
+  "AFTERHOURS 1.0 is DBIT, Bengaluru's flagship 24-hour inter-college technical hackathon on 30–31 October 2026, hosted by AWS Student Builder Group (AWS SBG DBIT). Pre-qualification round completed; qualified teams announcing 27 October.";
 
 const SITE_URL = "https://awsevents.dbit.edu.in/afterhours-1.0/";
 
@@ -138,13 +138,13 @@ function Home() {
           <Reveal>
             <div className="panel glow-primary mx-auto max-w-3xl rounded-2xl p-10 text-center">
               <p className="font-mono text-xs uppercase tracking-[0.32em] text-primary">
-                Round 1 Underway
+                Pre-Qualification Completed
               </p>
               <h2 className="mt-3 font-display text-[clamp(2rem,5vw,3.1rem)] font-bold leading-[1.1]">
-                Registrations Closed
+                Round 1 Closed
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-                Registrations on Unstop are closed. Pre-qualification round PPT submission has been extended till 25 October 2026, 11:59 PM IST.
+                Pre-qualification round is completed and PPT submissions are officially closed. We will be announcing the qualified teams on 27 October — stay tuned!
               </p>
               <a
                 href={UNSTOP_URL}

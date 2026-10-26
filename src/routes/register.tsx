@@ -73,21 +73,21 @@ function RegisterPage() {
           </header>
         </Reveal>
 
-        {/* Notice: Registrations Closed & PPT Extended */}
+        {/* Notice: Pre-Qualification Completed & Results Announcement */}
         <Reveal className="mt-8">
           <div className="panel rounded-xl border border-primary/40 bg-surface/60 p-5 sm:p-6 shadow-md">
             <div className="flex items-center justify-between gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                <span className="h-2 w-2 rounded-full bg-muted-foreground/60" aria-hidden="true" />
-                Registrations Closed
+                <span className="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true" />
+                Submissions Closed
               </span>
-              <span className="font-mono text-xs text-primary font-semibold">Extended</span>
+              <span className="font-mono text-xs text-primary font-semibold">Stay Tuned</span>
             </div>
             <h2 className="mt-3 font-display text-lg font-bold text-foreground">
-              Pre-Qualification PPT Submission Extended
+              Pre-Qualification Round Completed
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-              Registrations on Unstop are closed (ended 24 October at 7:30 PM). The Pre-Qualification Round PPT submission has been extended till <strong className="text-foreground">25 October 2026, 11:59 PM IST</strong>.
+              The pre-qualification round is completed and PPT submissions are officially closed. On <strong className="text-foreground">27 October 2026</strong>, we will be announcing the qualified teams for the offline finale — stay tuned!
             </p>
           </div>
         </Reveal>

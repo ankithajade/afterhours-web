@@ -78,10 +78,10 @@ function Round1Content() {
             Round 1 — Pre-Qualification
           </h2>
           <p className="mt-3 font-mono text-xs uppercase tracking-[0.24em] text-primary">
-            21 Oct 2026, 12:00 AM IST – 25 Oct 2026, 11:59 PM IST (Extended)
+            21 Oct 2026 – 25 Oct 2026 (Completed · Closed)
           </p>
           <p className="ah-prose mt-4 text-base leading-relaxed text-muted-foreground">
-            The first screening stage. Teams get multiple problem statements and choose one to develop and submit a proposed solution for.
+            The first screening stage. Teams got multiple problem statements and chose one to develop and submit a proposed solution for.
           </p>
         </section>
       </Reveal>
@@ -120,7 +120,7 @@ function Round1Content() {
             Results
           </p>
           <p className="ah-prose mt-2 text-base leading-relaxed text-muted-foreground">
-            Shortlisted teams are announced on <strong className="text-foreground">27 October</strong>. Teams that qualify move straight into the Grand Finale, where they'll pick a theme and build a working prototype from scratch.
+            The pre-qualification round is completed and PPT submissions are closed. We will be announcing the qualified teams on <strong className="text-foreground">27 October</strong> — stay tuned! Teams that qualify move straight into the Grand Finale, where they'll pick a theme and build a working prototype from scratch.
           </p>
         </div>
       </Reveal>

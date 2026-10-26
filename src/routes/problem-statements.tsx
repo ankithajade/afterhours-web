@@ -229,7 +229,7 @@ function ProblemStatementsPage() {
               <div className="flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-muted-foreground font-mono">
                 <div>
                   <span className="text-foreground font-semibold uppercase tracking-wider">Window: </span>
-                  21 Oct – 25 Oct 2026, 11:59 PM IST (Extended)
+                  21 Oct – 25 Oct 2026 (Completed · Closed)
                 </div>
                 <div>
                   <span className="text-foreground font-semibold uppercase tracking-wider">Team Size: </span>
@@ -288,13 +288,13 @@ function ProblemStatementsPage() {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.24em] text-primary">
                   <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-                  Submission Guidelines
+                  Pre-Qualification Completed
                 </div>
                 <h3 className="font-display text-xl font-bold text-foreground">
-                  Ready with your proposed solution?
+                  Round 1 PPT Submissions Closed
                 </h3>
                 <p className="ah-prose text-sm leading-relaxed text-muted-foreground max-w-xl">
-                  Prepare your slide deck addressing the selected problem statement, architecture, implementation roadmap, and impact. Submit before 25 October 2026, 11:59 PM IST (extended).
+                  The pre-qualification round is completed and PPT submissions are officially closed. We will be announcing the qualified teams on 27 October 2026 — stay tuned!
                 </p>
               </div>
 
